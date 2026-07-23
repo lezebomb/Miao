@@ -15,5 +15,6 @@ New-Item -ItemType Directory -Path $destination -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $source "pet.json") -Destination $destination -Force
 Copy-Item -LiteralPath (Join-Path $source "spritesheet.webp") -Destination $destination -Force
 
-Write-Host "妙妙已安装到 $destination"
-Write-Host "请完全退出并重新打开 Codex，然后在宠物选择器中选择“妙妙”。"
+Write-Host "Miaomiao installed at $destination"
+Write-Host "Open Codex Settings > Pets, select Refresh, then choose Miaomiao."
+Write-Host "If it is still missing with a WSL backend, quit Codex completely and run launch-codex-miaomiao.cmd."

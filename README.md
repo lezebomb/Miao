@@ -44,7 +44,15 @@
 %USERPROFILE%\.codex\pets\miaomiao
 ```
 
-完全退出并重新打开 Codex，在宠物选择器中选择“妙妙”。
+打开 Codex 的“设置 → 宠物”，先点击右上角刷新按钮，再选择“妙妙”。
+
+如果文件已经位于上述目录，但 Windows 版 Codex 使用 WSL 后台时仍不显示：
+
+1. 从系统托盘完全退出 Codex；
+2. 双击仓库根目录的 `launch-codex-miaomiao.cmd`；
+3. 回到“设置 → 宠物”，点击右上角刷新并选择“妙妙”。
+
+该启动器只为当前 Codex 的 Windows/WSL 路径兼容问题设置本次进程环境，不修改系统级环境变量。
 
 macOS / Linux 可运行：
 
@@ -82,6 +90,7 @@ docs/                   角色、动作、网络参考、安装与验证文档
 pet/miaomiao/           可直接安装的最终宠物
 previews/               预览图和动作 GIF
 scripts/                抽帧、预览和清单辅助脚本
+launch-codex-miaomiao.* Windows/WSL 路径兼容启动器
 ```
 
 公开仓库不提交原始视频，只提交精选关键帧、最终素材、文档和脚本，以控制体积并保护原始素材。
