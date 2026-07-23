@@ -1,0 +1,20 @@
+# Local tooling downloaded only for keyframe extraction
+.tools/
+
+# Original private video clips stay local; selected keyframes and analyses are versioned
+references/videos/*
+
+# Transient generation sources and large deterministic intermediates
+assets/hatch-run/decoded/
+assets/hatch-run/frames/
+assets/hatch-run/prompts/
+assets/hatch-run/references/
+assets/hatch-run/imagegen-jobs.json
+assets/hatch-run/final/spritesheet.png
+assets/hatch-run/final/spritesheet.webp
+
+# Common local noise
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

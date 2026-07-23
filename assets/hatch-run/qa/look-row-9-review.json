@@ -1,0 +1,51 @@
+{
+  "ok": true,
+  "source": "assets/hatch-run/decoded/look-row-9.png",
+  "registered": "assets/hatch-run/qa/look-row-9-registered.png",
+  "registration": "assets/hatch-run/qa/look-row-9-registration.json",
+  "edge_check": "pass: deterministic registration completed without a near-edge failure",
+  "identity_check": "pass: round face, green eyes, pink nose, warm golden tipped coat, pale chest, and ringed black tail tip remain stable",
+  "continuity_check": "pass: eyes and head advance smoothly from up through screen-right toward down-right with fixed paws, torso, baseline, and tail",
+  "directions": [
+    {
+      "direction": "000",
+      "verdict": "pass",
+      "evidence": "eyes and nose clearly point up"
+    },
+    {
+      "direction": "022.5",
+      "verdict": "pass",
+      "evidence": "upward gaze begins moving screen-right"
+    },
+    {
+      "direction": "045",
+      "verdict": "pass",
+      "evidence": "clear up-right head and eye direction"
+    },
+    {
+      "direction": "067.5",
+      "verdict": "pass",
+      "evidence": "rightward turn increases while retaining upward cue"
+    },
+    {
+      "direction": "090",
+      "verdict": "pass",
+      "evidence": "nose and eyes unmistakably screen-right"
+    },
+    {
+      "direction": "112.5",
+      "verdict": "pass",
+      "evidence": "rightward gaze begins lowering"
+    },
+    {
+      "direction": "135",
+      "verdict": "pass",
+      "evidence": "clear down-right head and eye direction"
+    },
+    {
+      "direction": "157.5",
+      "verdict": "pass",
+      "evidence": "near-down pose retains a subtle screen-right cue"
+    }
+  ]
+}

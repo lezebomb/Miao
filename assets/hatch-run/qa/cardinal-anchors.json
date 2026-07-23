@@ -1,0 +1,67 @@
+{
+  "ok": true,
+  "strip": "assets/hatch-run/decoded/look-cardinals.png",
+  "directions": [
+    "000",
+    "090",
+    "180",
+    "270"
+  ],
+  "errors": [],
+  "anchors": [
+    {
+      "direction": "000",
+      "source": "assets/hatch-run/decoded/look-anchor-repairs/000-source.png",
+      "source_size": [
+        1199,
+        1312
+      ],
+      "used_pixels": 336095,
+      "edge_pixels": 0,
+      "output": "assets/hatch-run/decoded/look-anchors/000.png",
+      "repair": "regenerated from prompts/look-anchor-repairs/000.md"
+    },
+    {
+      "direction": "090",
+      "source": "assets/hatch-run/decoded/look-anchor-repairs/090-source.png",
+      "source_size": [
+        1401,
+        1123
+      ],
+      "used_pixels": 333998,
+      "edge_pixels": 0,
+      "output": "assets/hatch-run/decoded/look-anchors/090.png",
+      "repair": "regenerated from prompts/look-anchor-repairs/090.md"
+    },
+    {
+      "direction": "180",
+      "source_box": [
+        990,
+        0,
+        1486,
+        793
+      ],
+      "used_pixels": 145924,
+      "edge_pixels": 0,
+      "output": "assets/hatch-run/decoded/look-anchors/180.png"
+    },
+    {
+      "direction": "270",
+      "source_box": [
+        1486,
+        0,
+        1981,
+        793
+      ],
+      "used_pixels": 148019,
+      "edge_pixels": 0,
+      "output": "assets/hatch-run/decoded/look-anchors/270.png"
+    }
+  ],
+  "semantic_review": {
+    "000": "pass: eyes and nose clearly point toward the top edge",
+    "090": "pass: nose and green pupils are right of head center",
+    "180": "pass: eyes, nose, and head angle point down",
+    "270": "pass: nose and green pupils are left of head center"
+  }
+}

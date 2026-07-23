@@ -1,0 +1,6 @@
+{
+  "visual_qa": "pass",
+  "qa_note": "修复后的 running-left 八帧均完整朝左、脸部无裁切，体型与基线稳定且无明显尺寸跳变；标准行、方向行和最终 v2 验证全部通过。",
+  "review_warnings": [],
+  "repair_rows": []
+}

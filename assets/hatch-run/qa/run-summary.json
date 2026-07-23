@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "spriteVersionNumber": 2,
+  "run_dir": "assets/hatch-run",
+  "spritesheet": "assets/hatch-run/final/spritesheet-extended.webp",
+  "packaged_spritesheet": "pet/miaomiao/spritesheet.webp",
+  "spritesheet_sha256": "f2522e12a2784075d11fd57b61258b268e39b447aeda24983775050de716b143",
+  "validation": "assets/hatch-run/final/validation-extended.json",
+  "chroma_despill": "assets/hatch-run/qa/chroma-despill-extended.json",
+  "contact_sheet": "assets/hatch-run/qa/contact-sheet-extended.png",
+  "direction_sheet": "assets/hatch-run/qa/look-directions.png",
+  "direction_semantics": "assets/hatch-run/qa/direction-semantics.json",
+  "blind_direction_validation": "assets/hatch-run/qa/direction-blind-validation.json",
+  "continuity": "assets/hatch-run/qa/look-continuity.json",
+  "review": "assets/hatch-run/qa/review.json",
+  "final_visual_qa": "assets/hatch-run/qa/final-visual-qa.json",
+  "package": "pet/miaomiao",
+  "installed_package": "C:\\Users\\24981\\.codex\\pets\\miaomiao",
+  "audio": "none"
+}

@@ -1,0 +1,50 @@
+{
+  "ok": true,
+  "source": "assets/hatch-run/decoded/look-row-10.png",
+  "assembled": "assets/hatch-run/final/spritesheet-extended.webp",
+  "edge_check": "pass: extended assembly completed without pose-recovery, clipping, or transform failure",
+  "identity_check": "pass: the same face, coat, chest, body scale, tail, and seated anchor continue from row 9",
+  "continuity_check": "pass: 180 continues from 157.5 and the loop advances through screen-left to 337.5 one step before 000",
+  "directions": [
+    {
+      "direction": "180",
+      "verdict": "pass",
+      "evidence": "eyes, nose, and head point down"
+    },
+    {
+      "direction": "202.5",
+      "verdict": "pass",
+      "evidence": "downward pose begins turning screen-left"
+    },
+    {
+      "direction": "225",
+      "verdict": "pass",
+      "evidence": "clear down-left head and eye direction"
+    },
+    {
+      "direction": "247.5",
+      "verdict": "pass",
+      "evidence": "leftward turn increases while retaining downward cue"
+    },
+    {
+      "direction": "270",
+      "verdict": "pass",
+      "evidence": "nose and green pupils unmistakably screen-left"
+    },
+    {
+      "direction": "292.5",
+      "verdict": "pass",
+      "evidence": "leftward gaze begins lifting"
+    },
+    {
+      "direction": "315",
+      "verdict": "pass",
+      "evidence": "clear up-left head and eye direction"
+    },
+    {
+      "direction": "337.5",
+      "verdict": "pass",
+      "evidence": "near-up pose retains a subtle screen-left cue and flows into 000"
+    }
+  ]
+}

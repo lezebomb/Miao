@@ -1,0 +1,122 @@
+{
+  "ok": true,
+  "reviewed_by": "independent final visual QA worker",
+  "directions": [
+    {
+      "direction": "000",
+      "verdict": "pass",
+      "expected": "up",
+      "observed": "up",
+      "reason": "双眼与鼻尖明确向上"
+    },
+    {
+      "direction": "022.5",
+      "verdict": "pass",
+      "expected": "up-right",
+      "observed": "up-right",
+      "reason": "鼻尖向右且双眼上抬"
+    },
+    {
+      "direction": "045",
+      "verdict": "pass",
+      "expected": "up-right",
+      "observed": "up-right",
+      "reason": "头脸右转并保持上视"
+    },
+    {
+      "direction": "067.5",
+      "verdict": "pass",
+      "expected": "up-right",
+      "observed": "up-right",
+      "reason": "右转增强且仍有上视"
+    },
+    {
+      "direction": "090",
+      "verdict": "pass",
+      "expected": "right",
+      "observed": "right",
+      "reason": "鼻尖与视线明确朝右"
+    },
+    {
+      "direction": "112.5",
+      "verdict": "pass",
+      "expected": "down-right",
+      "observed": "down-right",
+      "reason": "头脸朝右且视线下移"
+    },
+    {
+      "direction": "135",
+      "verdict": "pass",
+      "expected": "down-right",
+      "observed": "down-right",
+      "reason": "鼻尖右偏并明显下视"
+    },
+    {
+      "direction": "157.5",
+      "verdict": "pass",
+      "expected": "down-right",
+      "observed": "down-right",
+      "reason": "接近向下且保留右向"
+    },
+    {
+      "direction": "180",
+      "verdict": "pass",
+      "expected": "down",
+      "observed": "down",
+      "reason": "头、鼻与双眼明确向下"
+    },
+    {
+      "direction": "202.5",
+      "verdict": "pass",
+      "expected": "down-left",
+      "observed": "down-left",
+      "reason": "鼻尖左偏且视线向下"
+    },
+    {
+      "direction": "225",
+      "verdict": "pass",
+      "expected": "down-left",
+      "observed": "down-left",
+      "reason": "头脸左转并保持下视"
+    },
+    {
+      "direction": "247.5",
+      "verdict": "pass",
+      "expected": "down-left",
+      "observed": "down-left",
+      "reason": "左转增强且仍有下视"
+    },
+    {
+      "direction": "270",
+      "verdict": "pass",
+      "expected": "left",
+      "observed": "left",
+      "reason": "鼻尖与视线明确朝左"
+    },
+    {
+      "direction": "292.5",
+      "verdict": "pass",
+      "expected": "up-left",
+      "observed": "up-left",
+      "reason": "头脸朝左且视线上移"
+    },
+    {
+      "direction": "315",
+      "verdict": "pass",
+      "expected": "up-left",
+      "observed": "up-left",
+      "reason": "鼻尖左偏并明显上视"
+    },
+    {
+      "direction": "337.5",
+      "verdict": "pass",
+      "expected": "up-left",
+      "observed": "up-left",
+      "reason": "接近向上且保留左向"
+    }
+  ],
+  "continuity_resolution": {
+    "decision": "accept",
+    "evidence": "正常尺寸有标签循环没有错误象限、语义反转、身份变化或可见断裂；000 与 022.5 的透明区域是两耳之间的自然负空间。"
+  }
+}
