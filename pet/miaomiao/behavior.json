@@ -1,5 +1,5 @@
 {
-  "formatVersion": 1,
+  "formatVersion": 2,
   "cell": {
     "width": 192,
     "height": 208
@@ -12,19 +12,21 @@
         "actions/idle/frame-02.png",
         "actions/idle/frame-03.png",
         "actions/idle/frame-04.png",
-        "actions/idle/frame-05.png",
-        "actions/idle/frame-06.png",
-        "actions/idle/frame-07.png",
-        "actions/idle/frame-08.png",
-        "actions/idle/frame-09.png",
-        "actions/idle/frame-10.png",
-        "actions/idle/frame-11.png"
+        "actions/idle/frame-05.png"
       ],
-      "frameDurationMs": 140,
+      "frameDurationMs": 145,
+      "frameDurationsMs": [
+        145,
+        145,
+        145,
+        145,
+        145,
+        145
+      ],
+      "repeatCount": 1,
       "loop": true,
-      "sourceAtlasRow": 0,
-      "sourceFrameCount": 6,
-      "interpolation": "identity-locked-centroid-registration-with-capped-premultiplied-transition"
+      "frameProvenance": "clean-original-atlas-keyframes",
+      "interpolation": "none-independent-poses-only"
     },
     "running-right": {
       "frames": [
@@ -35,21 +37,23 @@
         "actions/running-right/frame-04.png",
         "actions/running-right/frame-05.png",
         "actions/running-right/frame-06.png",
-        "actions/running-right/frame-07.png",
-        "actions/running-right/frame-08.png",
-        "actions/running-right/frame-09.png",
-        "actions/running-right/frame-10.png",
-        "actions/running-right/frame-11.png",
-        "actions/running-right/frame-12.png",
-        "actions/running-right/frame-13.png",
-        "actions/running-right/frame-14.png",
-        "actions/running-right/frame-15.png"
+        "actions/running-right/frame-07.png"
       ],
-      "frameDurationMs": 70,
+      "frameDurationMs": 85,
+      "frameDurationsMs": [
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        85
+      ],
+      "repeatCount": 1,
       "loop": true,
-      "sourceAtlasRow": 1,
-      "sourceFrameCount": 8,
-      "interpolation": "identity-locked-centroid-registration-with-capped-premultiplied-transition"
+      "frameProvenance": "clean-original-atlas-keyframes",
+      "interpolation": "none-independent-poses-only"
     },
     "running-left": {
       "frames": [
@@ -60,21 +64,23 @@
         "actions/running-left/frame-04.png",
         "actions/running-left/frame-05.png",
         "actions/running-left/frame-06.png",
-        "actions/running-left/frame-07.png",
-        "actions/running-left/frame-08.png",
-        "actions/running-left/frame-09.png",
-        "actions/running-left/frame-10.png",
-        "actions/running-left/frame-11.png",
-        "actions/running-left/frame-12.png",
-        "actions/running-left/frame-13.png",
-        "actions/running-left/frame-14.png",
-        "actions/running-left/frame-15.png"
+        "actions/running-left/frame-07.png"
       ],
-      "frameDurationMs": 70,
+      "frameDurationMs": 85,
+      "frameDurationsMs": [
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        85,
+        85
+      ],
+      "repeatCount": 1,
       "loop": true,
-      "sourceAtlasRow": 2,
-      "sourceFrameCount": 8,
-      "interpolation": "identity-locked-centroid-registration-with-capped-premultiplied-transition"
+      "frameProvenance": "clean-original-atlas-keyframes",
+      "interpolation": "none-independent-poses-only"
     },
     "roll": {
       "frames": [
@@ -93,13 +99,35 @@
         "actions/roll/frame-12.png",
         "actions/roll/frame-13.png",
         "actions/roll/frame-14.png",
-        "actions/roll/frame-15.png"
+        "actions/roll/frame-15.png",
+        "actions/roll/frame-16.png",
+        "actions/roll/frame-17.png"
       ],
-      "frameDurationMs": 95,
+      "frameDurationMs": 200,
+      "frameDurationsMs": [
+        200,
+        190,
+        180,
+        170,
+        150,
+        130,
+        110,
+        105,
+        300,
+        300,
+        280,
+        120,
+        130,
+        150,
+        170,
+        180,
+        190,
+        175
+      ],
+      "repeatCount": 1,
       "loop": false,
-      "sourceAtlasRow": 5,
-      "sourceFrameCount": 8,
-      "interpolation": "identity-locked-centroid-registration-with-capped-premultiplied-transition"
+      "frameProvenance": "independently-drawn-pose-sheet",
+      "interpolation": "none-independent-poses-only"
     },
     "knead": {
       "frames": [
@@ -114,17 +142,27 @@
         "actions/knead/frame-08.png",
         "actions/knead/frame-09.png",
         "actions/knead/frame-10.png",
-        "actions/knead/frame-11.png",
-        "actions/knead/frame-12.png",
-        "actions/knead/frame-13.png",
-        "actions/knead/frame-14.png",
-        "actions/knead/frame-15.png"
+        "actions/knead/frame-11.png"
       ],
-      "frameDurationMs": 105,
+      "frameDurationMs": 120,
+      "frameDurationsMs": [
+        120,
+        105,
+        105,
+        115,
+        110,
+        105,
+        105,
+        115,
+        110,
+        110,
+        110,
+        110
+      ],
+      "repeatCount": 2,
       "loop": false,
-      "sourceAtlasRow": 7,
-      "sourceFrameCount": 6,
-      "interpolation": "identity-locked-centroid-registration-with-capped-premultiplied-transition"
+      "frameProvenance": "independently-drawn-pose-sheet",
+      "interpolation": "none-independent-poses-only"
     },
     "wash-face": {
       "frames": [
@@ -133,23 +171,21 @@
         "actions/wash-face/frame-02.png",
         "actions/wash-face/frame-03.png",
         "actions/wash-face/frame-04.png",
-        "actions/wash-face/frame-05.png",
-        "actions/wash-face/frame-06.png",
-        "actions/wash-face/frame-07.png",
-        "actions/wash-face/frame-08.png",
-        "actions/wash-face/frame-09.png",
-        "actions/wash-face/frame-10.png",
-        "actions/wash-face/frame-11.png",
-        "actions/wash-face/frame-12.png",
-        "actions/wash-face/frame-13.png",
-        "actions/wash-face/frame-14.png",
-        "actions/wash-face/frame-15.png"
+        "actions/wash-face/frame-05.png"
       ],
-      "frameDurationMs": 115,
+      "frameDurationMs": 130,
+      "frameDurationsMs": [
+        130,
+        130,
+        130,
+        130,
+        130,
+        130
+      ],
+      "repeatCount": 1,
       "loop": false,
-      "sourceAtlasRow": 8,
-      "sourceFrameCount": 6,
-      "interpolation": "identity-locked-centroid-registration-with-capped-premultiplied-transition"
+      "frameProvenance": "clean-original-atlas-keyframes",
+      "interpolation": "none-independent-poses-only"
     }
   },
   "events": {
@@ -161,7 +197,10 @@
       "weights": [
         0.5,
         0.5
-      ]
+      ],
+      "hoverDwellMs": 350,
+      "triggerCooldownMs": 900,
+      "ignoreWhilePlaying": true
     },
     "dragLeft": "running-left",
     "dragRight": "running-right",

@@ -1,0 +1,88 @@
+{
+  "ok": true,
+  "generationPolicy": {
+    "wholeCharacterCrossfade": "forbidden",
+    "premultipliedBlend": "not implemented",
+    "allOutputFrames": "independent opaque poses or clean original keyframes"
+  },
+  "timingRequirementsPassed": true,
+  "ghostingHeuristicsPassed": true,
+  "actions": {
+    "idle": {
+      "frameCount": 6,
+      "singleCycleDurationMs": 870,
+      "repeatCount": 1,
+      "effectivePlaybackDurationMs": 870,
+      "maxInteriorSemiTransparentRatio": 0.03605,
+      "maxSilhouetteAreaVsMedian": 1.0462,
+      "maxSignificantContourCount": 1,
+      "ghostingHeuristicsPassed": true,
+      "warnings": []
+    },
+    "running-right": {
+      "frameCount": 8,
+      "singleCycleDurationMs": 680,
+      "repeatCount": 1,
+      "effectivePlaybackDurationMs": 680,
+      "maxInteriorSemiTransparentRatio": 0.04947,
+      "maxSilhouetteAreaVsMedian": 1.1628,
+      "maxSignificantContourCount": 1,
+      "ghostingHeuristicsPassed": true,
+      "warnings": []
+    },
+    "running-left": {
+      "frameCount": 8,
+      "singleCycleDurationMs": 680,
+      "repeatCount": 1,
+      "effectivePlaybackDurationMs": 680,
+      "maxInteriorSemiTransparentRatio": 0.05635,
+      "maxSilhouetteAreaVsMedian": 1.147,
+      "maxSignificantContourCount": 1,
+      "ghostingHeuristicsPassed": true,
+      "warnings": []
+    },
+    "roll": {
+      "frameCount": 18,
+      "singleCycleDurationMs": 3230,
+      "repeatCount": 1,
+      "effectivePlaybackDurationMs": 3230,
+      "maxInteriorSemiTransparentRatio": 0.05967,
+      "maxSilhouetteAreaVsMedian": 1.2432,
+      "maxSignificantContourCount": 1,
+      "ghostingHeuristicsPassed": true,
+      "warnings": []
+    },
+    "knead": {
+      "frameCount": 12,
+      "singleCycleDurationMs": 1320,
+      "repeatCount": 2,
+      "effectivePlaybackDurationMs": 2640,
+      "maxInteriorSemiTransparentRatio": 0.03858,
+      "maxSilhouetteAreaVsMedian": 1.0401,
+      "maxSignificantContourCount": 1,
+      "ghostingHeuristicsPassed": true,
+      "warnings": []
+    },
+    "wash-face": {
+      "frameCount": 6,
+      "singleCycleDurationMs": 780,
+      "repeatCount": 1,
+      "effectivePlaybackDurationMs": 780,
+      "maxInteriorSemiTransparentRatio": 0.03226,
+      "maxSilhouetteAreaVsMedian": 1.1485,
+      "maxSignificantContourCount": 1,
+      "ghostingHeuristicsPassed": true,
+      "warnings": []
+    }
+  },
+  "previews": {
+    "black": "previews/actions-v3/black",
+    "white": "previews/actions-v3/white",
+    "contactSheetBlack": "previews/actions-v3/contact-sheet-black.jpg",
+    "contactSheetWhite": "previews/actions-v3/contact-sheet-white.jpg"
+  },
+  "visualReview": {
+    "verdict": "pass",
+    "note": "Verdict is never auto-promoted to pass; inspect both background previews before selecting pass."
+  }
+}

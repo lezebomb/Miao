@@ -21,6 +21,10 @@ foreach ($actionProperty in $behavior.actions.PSObject.Properties) {
     if ($action.frames.Count -lt 1) {
         throw "Action $($actionProperty.Name) has no frames."
     }
+    if ($null -ne $action.PSObject.Properties["frameDurationsMs"] -and
+        $action.frameDurationsMs.Count -ne $action.frames.Count) {
+        throw "Action $($actionProperty.Name) has mismatched frameDurationsMs."
+    }
     foreach ($relativePath in $action.frames) {
         $path = Join-Path $petRoot ([string]$relativePath -replace "/", "\")
         if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
@@ -59,8 +63,10 @@ $window.Content = $image
 
 $script:currentAction = "idle"
 $script:frameIndex = 0
+$script:completedCycles = 0
 $script:nextFrameAt = [DateTime]::UtcNow
 $script:hoverArmed = $true
+$script:lastPetTriggerAt = [DateTime]::MinValue
 $script:isDragging = $false
 $script:dragMoved = $false
 $script:lastCursor = $null
@@ -95,19 +101,47 @@ function Show-CurrentFrame {
     $image.Source = Resolve-Frame $framePath
 }
 
+function Get-FrameDurationMs($action, [int]$index) {
+    if ($null -ne $action.PSObject.Properties["frameDurationsMs"]) {
+        return [int]$action.frameDurationsMs[$index]
+    }
+    return [int]$action.frameDurationMs
+}
+
 function Start-Action([string]$name) {
     $script:currentAction = $name
     $script:frameIndex = 0
-    $script:nextFrameAt = [DateTime]::UtcNow
+    $script:completedCycles = 0
     Show-CurrentFrame
+    $action = Resolve-Action $name
+    $script:nextFrameAt = [DateTime]::UtcNow.AddMilliseconds((Get-FrameDurationMs $action 0))
 }
 
 function Start-PetAction {
-    if ($script:currentAction -ne "idle") {
+    $event = $behavior.events.petOrHover
+    $now = [DateTime]::UtcNow
+    if (($null -eq $event.PSObject.Properties["ignoreWhilePlaying"] -or [bool]$event.ignoreWhilePlaying) -and
+        $script:currentAction -ne "idle") {
         return
     }
-    $choices = @($behavior.events.petOrHover.random)
-    $choice = $choices[(Get-Random -Minimum 0 -Maximum $choices.Count)]
+    $cooldown = if ($null -ne $event.PSObject.Properties["triggerCooldownMs"]) { [int]$event.triggerCooldownMs } else { 900 }
+    if (($now - $script:lastPetTriggerAt).TotalMilliseconds -lt $cooldown) {
+        return
+    }
+    $choices = @($event.random)
+    $weights = @($event.weights)
+    $roll = (Get-Random -Minimum 0 -Maximum 1000000) / 1000000.0
+    $cumulative = 0.0
+    $choice = $choices[-1]
+    for ($index = 0; $index -lt $choices.Count; $index++) {
+        $weight = if ($weights.Count -eq $choices.Count) { [double]$weights[$index] } else { 1.0 / $choices.Count }
+        $cumulative += $weight
+        if ($roll -lt $cumulative) {
+            $choice = $choices[$index]
+            break
+        }
+    }
+    $script:lastPetTriggerAt = $now
     Start-Action ([string]$choice)
 }
 
@@ -130,28 +164,50 @@ $timer.Add_Tick({
             $script:frameIndex = 0
         }
         else {
-            Start-Action "idle"
-            return
+            $script:completedCycles++
+            $repeatCount = if ($null -ne $action.PSObject.Properties["repeatCount"]) { [int]$action.repeatCount } else { 1 }
+            if ($script:completedCycles -lt $repeatCount) {
+                $script:frameIndex = 0
+            }
+            else {
+                Start-Action "idle"
+                return
+            }
         }
     }
     Show-CurrentFrame
-    $script:nextFrameAt = $now.AddMilliseconds([int]$action.frameDurationMs)
+    $script:nextFrameAt = $now.AddMilliseconds((Get-FrameDurationMs $action $script:frameIndex))
 })
 
-$window.Add_MouseEnter({
-    if ($script:hoverArmed -and -not $script:isDragging) {
+$hoverTimer = New-Object System.Windows.Threading.DispatcherTimer
+$hoverDwellMs = if ($null -ne $behavior.events.petOrHover.PSObject.Properties["hoverDwellMs"]) {
+    [int]$behavior.events.petOrHover.hoverDwellMs
+} else { 350 }
+$hoverTimer.Interval = [TimeSpan]::FromMilliseconds($hoverDwellMs)
+$hoverTimer.Add_Tick({
+    $hoverTimer.Stop()
+    if ($script:hoverArmed -and -not $script:isDragging -and $window.IsMouseOver) {
         $script:hoverArmed = $false
         Start-PetAction
     }
 })
 
+$window.Add_MouseEnter({
+    if ($script:hoverArmed -and -not $script:isDragging) {
+        $hoverTimer.Stop()
+        $hoverTimer.Start()
+    }
+})
+
 $window.Add_MouseLeave({
+    $hoverTimer.Stop()
     if (-not $script:isDragging) {
         $script:hoverArmed = $true
     }
 })
 
 $window.Add_MouseLeftButtonDown({
+    $hoverTimer.Stop()
     $script:isDragging = $true
     $script:dragMoved = $false
     $script:lastCursor = [System.Windows.Forms.Cursor]::Position
@@ -197,6 +253,7 @@ $window.Add_MouseRightButtonUp({
 
 $window.Add_Closed({
     $timer.Stop()
+    $hoverTimer.Stop()
 })
 
 Start-Action "idle"

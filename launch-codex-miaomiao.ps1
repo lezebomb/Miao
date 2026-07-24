@@ -6,6 +6,16 @@ param(
 
 $ErrorActionPreference = "Stop"
 
+$projectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+$installer = Join-Path $projectRoot "install.ps1"
+if (-not (Test-Path -LiteralPath $installer -PathType Leaf)) {
+    throw "Missing installer: $installer"
+}
+
+# Always synchronize the repository's current pet package before starting Codex,
+# so the one-click launcher cannot silently keep an older installed copy.
+& $installer
+
 $petDirectory = Join-Path $env:USERPROFILE ".codex\pets\miaomiao"
 $manifestPath = Join-Path $petDirectory "pet.json"
 $spritesheetPath = Join-Path $petDirectory "spritesheet.webp"
