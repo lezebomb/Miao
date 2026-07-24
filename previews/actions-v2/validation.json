@@ -1,0 +1,172 @@
+{
+  "ok": true,
+  "identitySource": "pet/miaomiao/spritesheet.webp",
+  "sourceVideoReferences": [
+    "references/videos/撒娇打滚.mp4",
+    "references/videos/踩奶.mp4",
+    "references/videos/躺着用爪子洗脸.mp4"
+  ],
+  "actions": {
+    "idle": {
+      "frameCount": 12,
+      "size": [
+        192,
+        208
+      ],
+      "mode": "RGBA",
+      "transparentCorners": true,
+      "transparentBoundary": true,
+      "boundingWidth": {
+        "min": 150,
+        "max": 172
+      },
+      "boundingHeight": {
+        "min": 198,
+        "max": 200
+      },
+      "centroidX": {
+        "min": 77.44,
+        "max": 82.38
+      },
+      "centroidY": {
+        "min": 109.66,
+        "max": 110.76
+      }
+    },
+    "running-right": {
+      "frameCount": 16,
+      "size": [
+        192,
+        208
+      ],
+      "mode": "RGBA",
+      "transparentCorners": true,
+      "transparentBoundary": true,
+      "boundingWidth": {
+        "min": 182,
+        "max": 188
+      },
+      "boundingHeight": {
+        "min": 101,
+        "max": 148
+      },
+      "centroidX": {
+        "min": 99.98,
+        "max": 113.85
+      },
+      "centroidY": {
+        "min": 101.47,
+        "max": 106.68
+      }
+    },
+    "running-left": {
+      "frameCount": 16,
+      "size": [
+        192,
+        208
+      ],
+      "mode": "RGBA",
+      "transparentCorners": true,
+      "transparentBoundary": true,
+      "boundingWidth": {
+        "min": 182,
+        "max": 189
+      },
+      "boundingHeight": {
+        "min": 89,
+        "max": 118
+      },
+      "centroidX": {
+        "min": 79.37,
+        "max": 91.65
+      },
+      "centroidY": {
+        "min": 97.58,
+        "max": 104.6
+      }
+    },
+    "roll": {
+      "frameCount": 16,
+      "size": [
+        192,
+        208
+      ],
+      "mode": "RGBA",
+      "transparentCorners": true,
+      "transparentBoundary": true,
+      "boundingWidth": {
+        "min": 180,
+        "max": 188
+      },
+      "boundingHeight": {
+        "min": 86,
+        "max": 188
+      },
+      "centroidX": {
+        "min": 78.83,
+        "max": 103.07
+      },
+      "centroidY": {
+        "min": 98.89,
+        "max": 106.3
+      }
+    },
+    "knead": {
+      "frameCount": 16,
+      "size": [
+        192,
+        208
+      ],
+      "mode": "RGBA",
+      "transparentCorners": true,
+      "transparentBoundary": true,
+      "boundingWidth": {
+        "min": 156,
+        "max": 185
+      },
+      "boundingHeight": {
+        "min": 197,
+        "max": 204
+      },
+      "centroidX": {
+        "min": 83.67,
+        "max": 93.68
+      },
+      "centroidY": {
+        "min": 105.22,
+        "max": 110.5
+      }
+    },
+    "wash-face": {
+      "frameCount": 16,
+      "size": [
+        192,
+        208
+      ],
+      "mode": "RGBA",
+      "transparentCorners": true,
+      "transparentBoundary": true,
+      "boundingWidth": {
+        "min": 121,
+        "max": 132
+      },
+      "boundingHeight": {
+        "min": 198,
+        "max": 204
+      },
+      "centroidX": {
+        "min": 88.67,
+        "max": 95.85
+      },
+      "centroidY": {
+        "min": 109.31,
+        "max": 117.68
+      }
+    }
+  },
+  "visualReview": {
+    "contactSheet": "previews/actions-v2/contact-sheet.jpg",
+    "verdict": "pass",
+    "note": "Identity-locked source frames stay dominant; large-motion transitions use conservative blend caps to prevent face, limb, and tail deformation."
+  }
+}
