@@ -1,6 +1,24 @@
 {
   "ok": true,
+  "deterministicChecksPassed": true,
   "identitySource": "pet/miaomiao/spritesheet.webp",
+  "frameProvenance": {
+    "idle": "pet/miaomiao/pose-sources/idle",
+    "running-right": "pet/miaomiao/pose-sources/running-right",
+    "running-left": "pet/miaomiao/pose-sources/running-left",
+    "roll": "pet/miaomiao/pose-sources/roll",
+    "knead": "pet/miaomiao/pose-sources/knead",
+    "wash-face": "pet/miaomiao/pose-sources/wash-face"
+  },
+  "generationPolicy": {
+    "crossfadeDisabled": true,
+    "wholeSpriteAlphaBlendDisabled": true,
+    "tweenLoopDisabled": true,
+    "acceptedFrames": [
+      "original clean atlas keyframes",
+      "independently drawn complete poses"
+    ]
+  },
   "sourceVideoReferences": [
     "references/videos/撒娇打滚.mp4",
     "references/videos/踩奶.mp4",
@@ -8,165 +26,1220 @@
   ],
   "actions": {
     "idle": {
-      "frameCount": 12,
+      "frameCount": 10,
+      "targetFrameRange": [
+        8,
+        10
+      ],
+      "targetFrameCountReached": true,
       "size": [
         192,
         208
       ],
       "mode": "RGBA",
-      "transparentCorners": true,
-      "transparentBoundary": true,
       "boundingWidth": {
-        "min": 150,
-        "max": 172
+        "min": 153,
+        "max": 156
       },
       "boundingHeight": {
-        "min": 198,
-        "max": 200
+        "min": 189,
+        "max": 198
       },
       "centroidX": {
-        "min": 77.44,
-        "max": 82.38
+        "min": 79.52,
+        "max": 81.2
       },
       "centroidY": {
-        "min": 109.66,
-        "max": 110.76
-      }
+        "min": 118.41,
+        "max": 120.8
+      },
+      "ghostingChecks": {
+        "largeInternalSemiTransparencyFrames": [],
+        "abnormalSilhouetteExpansionFrames": [],
+        "doubleContourHeuristicFrames": [],
+        "combinedGhostingFailureFrames": [],
+        "verdict": "pass",
+        "method": "interior-alpha + robust silhouette-area + opaque-component/contour-density heuristics"
+      },
+      "frames": [
+        {
+          "visibleArea": 17794,
+          "opaqueArea": 17070,
+          "semiTransparentPixels": 724,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 587,
+          "contourToAreaRatio": 0.032989,
+          "opaqueComponentAreas": [
+            17070
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 17685,
+          "opaqueArea": 16969,
+          "semiTransparentPixels": 716,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 587,
+          "contourToAreaRatio": 0.033192,
+          "opaqueComponentAreas": [
+            16969
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 17630,
+          "opaqueArea": 16921,
+          "semiTransparentPixels": 709,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 582,
+          "contourToAreaRatio": 0.033012,
+          "opaqueComponentAreas": [
+            16921
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 17855,
+          "opaqueArea": 17153,
+          "semiTransparentPixels": 702,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 588,
+          "contourToAreaRatio": 0.032932,
+          "opaqueComponentAreas": [
+            17153
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 17885,
+          "opaqueArea": 17161,
+          "semiTransparentPixels": 724,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 590,
+          "contourToAreaRatio": 0.032989,
+          "opaqueComponentAreas": [
+            17161
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 18326,
+          "opaqueArea": 17590,
+          "semiTransparentPixels": 736,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 592,
+          "contourToAreaRatio": 0.032304,
+          "opaqueComponentAreas": [
+            17590
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 17929,
+          "opaqueArea": 17197,
+          "semiTransparentPixels": 732,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 581,
+          "contourToAreaRatio": 0.032406,
+          "opaqueComponentAreas": [
+            17197
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 17949,
+          "opaqueArea": 17230,
+          "semiTransparentPixels": 719,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 581,
+          "contourToAreaRatio": 0.032369,
+          "opaqueComponentAreas": [
+            17230
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 17675,
+          "opaqueArea": 16965,
+          "semiTransparentPixels": 710,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 586,
+          "contourToAreaRatio": 0.033154,
+          "opaqueComponentAreas": [
+            16965
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 17741,
+          "opaqueArea": 17006,
+          "semiTransparentPixels": 735,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 586,
+          "contourToAreaRatio": 0.033031,
+          "opaqueComponentAreas": [
+            17006
+          ],
+          "significantOpaqueComponents": 1
+        }
+      ]
     },
     "running-right": {
-      "frameCount": 16,
+      "frameCount": 10,
+      "targetFrameRange": [
+        8,
+        12
+      ],
+      "targetFrameCountReached": true,
       "size": [
         192,
         208
       ],
       "mode": "RGBA",
-      "transparentCorners": true,
-      "transparentBoundary": true,
       "boundingWidth": {
-        "min": 182,
-        "max": 188
+        "min": 142,
+        "max": 182
       },
       "boundingHeight": {
-        "min": 101,
-        "max": 148
+        "min": 74,
+        "max": 96
       },
       "centroidX": {
-        "min": 99.98,
-        "max": 113.85
+        "min": 95.71,
+        "max": 105.61
       },
       "centroidY": {
-        "min": 101.47,
-        "max": 106.68
-      }
+        "min": 94.67,
+        "max": 109.23
+      },
+      "ghostingChecks": {
+        "largeInternalSemiTransparencyFrames": [],
+        "abnormalSilhouetteExpansionFrames": [],
+        "doubleContourHeuristicFrames": [],
+        "combinedGhostingFailureFrames": [],
+        "verdict": "pass",
+        "method": "interior-alpha + robust silhouette-area + opaque-component/contour-density heuristics"
+      },
+      "frames": [
+        {
+          "visibleArea": 6400,
+          "opaqueArea": 5966,
+          "semiTransparentPixels": 434,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 357,
+          "contourToAreaRatio": 0.055781,
+          "opaqueComponentAreas": [
+            5965,
+            1
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 7399,
+          "opaqueArea": 6786,
+          "semiTransparentPixels": 613,
+          "internalSemiTransparentPixels": 2,
+          "internalSemiTransparentRatio": 0.000366,
+          "contourPixels": 496,
+          "contourToAreaRatio": 0.067036,
+          "opaqueComponentAreas": [
+            6786
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 7273,
+          "opaqueArea": 6676,
+          "semiTransparentPixels": 597,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 495,
+          "contourToAreaRatio": 0.06806,
+          "opaqueComponentAreas": [
+            6675,
+            1
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 6519,
+          "opaqueArea": 5947,
+          "semiTransparentPixels": 572,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 465,
+          "contourToAreaRatio": 0.07133,
+          "opaqueComponentAreas": [
+            5947
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 7073,
+          "opaqueArea": 6547,
+          "semiTransparentPixels": 526,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 434,
+          "contourToAreaRatio": 0.06136,
+          "opaqueComponentAreas": [
+            6547
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 6703,
+          "opaqueArea": 6182,
+          "semiTransparentPixels": 521,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 415,
+          "contourToAreaRatio": 0.061913,
+          "opaqueComponentAreas": [
+            6182
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 6225,
+          "opaqueArea": 5785,
+          "semiTransparentPixels": 440,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 355,
+          "contourToAreaRatio": 0.057028,
+          "opaqueComponentAreas": [
+            5785
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 7085,
+          "opaqueArea": 6496,
+          "semiTransparentPixels": 589,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 468,
+          "contourToAreaRatio": 0.066055,
+          "opaqueComponentAreas": [
+            6496
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 7503,
+          "opaqueArea": 6876,
+          "semiTransparentPixels": 627,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 514,
+          "contourToAreaRatio": 0.068506,
+          "opaqueComponentAreas": [
+            6876
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 6270,
+          "opaqueArea": 5843,
+          "semiTransparentPixels": 427,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 352,
+          "contourToAreaRatio": 0.05614,
+          "opaqueComponentAreas": [
+            5843
+          ],
+          "significantOpaqueComponents": 1
+        }
+      ]
     },
     "running-left": {
-      "frameCount": 16,
+      "frameCount": 10,
+      "targetFrameRange": [
+        8,
+        12
+      ],
+      "targetFrameCountReached": true,
       "size": [
         192,
         208
       ],
       "mode": "RGBA",
-      "transparentCorners": true,
-      "transparentBoundary": true,
       "boundingWidth": {
-        "min": 182,
-        "max": 189
+        "min": 142,
+        "max": 182
       },
       "boundingHeight": {
-        "min": 89,
-        "max": 118
+        "min": 74,
+        "max": 96
       },
       "centroidX": {
-        "min": 79.37,
-        "max": 91.65
+        "min": 85.39,
+        "max": 95.29
       },
       "centroidY": {
-        "min": 97.58,
-        "max": 104.6
-      }
+        "min": 94.67,
+        "max": 109.23
+      },
+      "ghostingChecks": {
+        "largeInternalSemiTransparencyFrames": [],
+        "abnormalSilhouetteExpansionFrames": [],
+        "doubleContourHeuristicFrames": [],
+        "combinedGhostingFailureFrames": [],
+        "verdict": "pass",
+        "method": "interior-alpha + robust silhouette-area + opaque-component/contour-density heuristics"
+      },
+      "frames": [
+        {
+          "visibleArea": 6400,
+          "opaqueArea": 5966,
+          "semiTransparentPixels": 434,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 357,
+          "contourToAreaRatio": 0.055781,
+          "opaqueComponentAreas": [
+            5965,
+            1
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 7399,
+          "opaqueArea": 6786,
+          "semiTransparentPixels": 613,
+          "internalSemiTransparentPixels": 2,
+          "internalSemiTransparentRatio": 0.000366,
+          "contourPixels": 496,
+          "contourToAreaRatio": 0.067036,
+          "opaqueComponentAreas": [
+            6786
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 7273,
+          "opaqueArea": 6676,
+          "semiTransparentPixels": 597,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 495,
+          "contourToAreaRatio": 0.06806,
+          "opaqueComponentAreas": [
+            6675,
+            1
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 6519,
+          "opaqueArea": 5947,
+          "semiTransparentPixels": 572,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 465,
+          "contourToAreaRatio": 0.07133,
+          "opaqueComponentAreas": [
+            5947
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 7073,
+          "opaqueArea": 6547,
+          "semiTransparentPixels": 526,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 434,
+          "contourToAreaRatio": 0.06136,
+          "opaqueComponentAreas": [
+            6547
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 6703,
+          "opaqueArea": 6182,
+          "semiTransparentPixels": 521,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 415,
+          "contourToAreaRatio": 0.061913,
+          "opaqueComponentAreas": [
+            6182
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 6225,
+          "opaqueArea": 5785,
+          "semiTransparentPixels": 440,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 355,
+          "contourToAreaRatio": 0.057028,
+          "opaqueComponentAreas": [
+            5785
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 7085,
+          "opaqueArea": 6496,
+          "semiTransparentPixels": 589,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 468,
+          "contourToAreaRatio": 0.066055,
+          "opaqueComponentAreas": [
+            6496
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 7503,
+          "opaqueArea": 6876,
+          "semiTransparentPixels": 627,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 514,
+          "contourToAreaRatio": 0.068506,
+          "opaqueComponentAreas": [
+            6876
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 6270,
+          "opaqueArea": 5843,
+          "semiTransparentPixels": 427,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 352,
+          "contourToAreaRatio": 0.05614,
+          "opaqueComponentAreas": [
+            5843
+          ],
+          "significantOpaqueComponents": 1
+        }
+      ]
     },
     "roll": {
       "frameCount": 16,
+      "targetFrameRange": [
+        14,
+        20
+      ],
+      "targetFrameCountReached": true,
       "size": [
         192,
         208
       ],
       "mode": "RGBA",
-      "transparentCorners": true,
-      "transparentBoundary": true,
       "boundingWidth": {
-        "min": 180,
-        "max": 188
+        "min": 110,
+        "max": 182
       },
       "boundingHeight": {
-        "min": 86,
-        "max": 188
+        "min": 75,
+        "max": 154
       },
       "centroidX": {
-        "min": 78.83,
-        "max": 103.07
+        "min": 86.66,
+        "max": 99.83
       },
       "centroidY": {
-        "min": 98.89,
-        "max": 106.3
-      }
+        "min": 91.81,
+        "max": 105.98
+      },
+      "ghostingChecks": {
+        "largeInternalSemiTransparencyFrames": [],
+        "abnormalSilhouetteExpansionFrames": [],
+        "doubleContourHeuristicFrames": [],
+        "combinedGhostingFailureFrames": [],
+        "verdict": "pass",
+        "method": "interior-alpha + robust silhouette-area + opaque-component/contour-density heuristics"
+      },
+      "frames": [
+        {
+          "visibleArea": 8103,
+          "opaqueArea": 7618,
+          "semiTransparentPixels": 485,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 329,
+          "contourToAreaRatio": 0.040602,
+          "opaqueComponentAreas": [
+            7618
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 8492,
+          "opaqueArea": 7979,
+          "semiTransparentPixels": 513,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 383,
+          "contourToAreaRatio": 0.045101,
+          "opaqueComponentAreas": [
+            7979
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 8025,
+          "opaqueArea": 7447,
+          "semiTransparentPixels": 578,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 408,
+          "contourToAreaRatio": 0.050841,
+          "opaqueComponentAreas": [
+            7447
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 7351,
+          "opaqueArea": 6829,
+          "semiTransparentPixels": 522,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 379,
+          "contourToAreaRatio": 0.051558,
+          "opaqueComponentAreas": [
+            6829
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 7916,
+          "opaqueArea": 7345,
+          "semiTransparentPixels": 571,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 410,
+          "contourToAreaRatio": 0.051794,
+          "opaqueComponentAreas": [
+            7345
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 7779,
+          "opaqueArea": 7261,
+          "semiTransparentPixels": 518,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 376,
+          "contourToAreaRatio": 0.048335,
+          "opaqueComponentAreas": [
+            7261
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 9917,
+          "opaqueArea": 9307,
+          "semiTransparentPixels": 610,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 444,
+          "contourToAreaRatio": 0.044772,
+          "opaqueComponentAreas": [
+            9307
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 9187,
+          "opaqueArea": 8619,
+          "semiTransparentPixels": 568,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 412,
+          "contourToAreaRatio": 0.044846,
+          "opaqueComponentAreas": [
+            8619
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 11880,
+          "opaqueArea": 11239,
+          "semiTransparentPixels": 641,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 446,
+          "contourToAreaRatio": 0.037542,
+          "opaqueComponentAreas": [
+            11239
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 11014,
+          "opaqueArea": 10362,
+          "semiTransparentPixels": 652,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 441,
+          "contourToAreaRatio": 0.04004,
+          "opaqueComponentAreas": [
+            10362
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 10603,
+          "opaqueArea": 10030,
+          "semiTransparentPixels": 573,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 394,
+          "contourToAreaRatio": 0.037159,
+          "opaqueComponentAreas": [
+            10030
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 9198,
+          "opaqueArea": 8615,
+          "semiTransparentPixels": 583,
+          "internalSemiTransparentPixels": 10,
+          "internalSemiTransparentRatio": 0.001309,
+          "contourPixels": 401,
+          "contourToAreaRatio": 0.043596,
+          "opaqueComponentAreas": [
+            8614,
+            1
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 8894,
+          "opaqueArea": 8297,
+          "semiTransparentPixels": 597,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 422,
+          "contourToAreaRatio": 0.047448,
+          "opaqueComponentAreas": [
+            8297
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 8593,
+          "opaqueArea": 8120,
+          "semiTransparentPixels": 473,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 346,
+          "contourToAreaRatio": 0.040265,
+          "opaqueComponentAreas": [
+            8120
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 10033,
+          "opaqueArea": 9518,
+          "semiTransparentPixels": 515,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 388,
+          "contourToAreaRatio": 0.038672,
+          "opaqueComponentAreas": [
+            9518
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 9635,
+          "opaqueArea": 9137,
+          "semiTransparentPixels": 498,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 363,
+          "contourToAreaRatio": 0.037675,
+          "opaqueComponentAreas": [
+            9137
+          ],
+          "significantOpaqueComponents": 1
+        }
+      ]
     },
     "knead": {
-      "frameCount": 16,
+      "frameCount": 14,
+      "targetFrameRange": [
+        12,
+        16
+      ],
+      "targetFrameCountReached": true,
       "size": [
         192,
         208
       ],
       "mode": "RGBA",
-      "transparentCorners": true,
-      "transparentBoundary": true,
       "boundingWidth": {
-        "min": 156,
-        "max": 185
+        "min": 169,
+        "max": 182
       },
       "boundingHeight": {
-        "min": 197,
-        "max": 204
+        "min": 187,
+        "max": 195
       },
       "centroidX": {
-        "min": 83.67,
-        "max": 93.68
+        "min": 73.72,
+        "max": 78.25
       },
       "centroidY": {
-        "min": 105.22,
-        "max": 110.5
-      }
+        "min": 105.3,
+        "max": 113.18
+      },
+      "ghostingChecks": {
+        "largeInternalSemiTransparencyFrames": [],
+        "abnormalSilhouetteExpansionFrames": [],
+        "doubleContourHeuristicFrames": [],
+        "combinedGhostingFailureFrames": [],
+        "verdict": "pass",
+        "method": "interior-alpha + robust silhouette-area + opaque-component/contour-density heuristics"
+      },
+      "frames": [
+        {
+          "visibleArea": 21312,
+          "opaqueArea": 20341,
+          "semiTransparentPixels": 971,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 644,
+          "contourToAreaRatio": 0.030218,
+          "opaqueComponentAreas": [
+            20341
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 21271,
+          "opaqueArea": 20323,
+          "semiTransparentPixels": 948,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 668,
+          "contourToAreaRatio": 0.031404,
+          "opaqueComponentAreas": [
+            20323
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 20594,
+          "opaqueArea": 19673,
+          "semiTransparentPixels": 921,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 633,
+          "contourToAreaRatio": 0.030737,
+          "opaqueComponentAreas": [
+            19673
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 21339,
+          "opaqueArea": 20361,
+          "semiTransparentPixels": 978,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 664,
+          "contourToAreaRatio": 0.031117,
+          "opaqueComponentAreas": [
+            20361
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 20866,
+          "opaqueArea": 19902,
+          "semiTransparentPixels": 964,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 654,
+          "contourToAreaRatio": 0.031343,
+          "opaqueComponentAreas": [
+            19902
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 20521,
+          "opaqueArea": 19565,
+          "semiTransparentPixels": 956,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 631,
+          "contourToAreaRatio": 0.030749,
+          "opaqueComponentAreas": [
+            19565
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 19819,
+          "opaqueArea": 18841,
+          "semiTransparentPixels": 978,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 650,
+          "contourToAreaRatio": 0.032797,
+          "opaqueComponentAreas": [
+            18841
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 20220,
+          "opaqueArea": 19292,
+          "semiTransparentPixels": 928,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 627,
+          "contourToAreaRatio": 0.031009,
+          "opaqueComponentAreas": [
+            19292
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 19932,
+          "opaqueArea": 19034,
+          "semiTransparentPixels": 898,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 608,
+          "contourToAreaRatio": 0.030504,
+          "opaqueComponentAreas": [
+            19034
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 20431,
+          "opaqueArea": 19585,
+          "semiTransparentPixels": 846,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 586,
+          "contourToAreaRatio": 0.028682,
+          "opaqueComponentAreas": [
+            19585
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 20838,
+          "opaqueArea": 19905,
+          "semiTransparentPixels": 933,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 646,
+          "contourToAreaRatio": 0.031001,
+          "opaqueComponentAreas": [
+            19905
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 21151,
+          "opaqueArea": 20295,
+          "semiTransparentPixels": 856,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 601,
+          "contourToAreaRatio": 0.028415,
+          "opaqueComponentAreas": [
+            20295
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 21829,
+          "opaqueArea": 20902,
+          "semiTransparentPixels": 927,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 652,
+          "contourToAreaRatio": 0.029869,
+          "opaqueComponentAreas": [
+            20902
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 21651,
+          "opaqueArea": 20664,
+          "semiTransparentPixels": 987,
+          "internalSemiTransparentPixels": 3,
+          "internalSemiTransparentRatio": 0.000158,
+          "contourPixels": 660,
+          "contourToAreaRatio": 0.030484,
+          "opaqueComponentAreas": [
+            20664
+          ],
+          "significantOpaqueComponents": 1
+        }
+      ]
     },
     "wash-face": {
-      "frameCount": 16,
+      "frameCount": 14,
+      "targetFrameRange": [
+        12,
+        16
+      ],
+      "targetFrameCountReached": true,
       "size": [
         192,
         208
       ],
       "mode": "RGBA",
-      "transparentCorners": true,
-      "transparentBoundary": true,
       "boundingWidth": {
-        "min": 121,
-        "max": 132
+        "min": 146,
+        "max": 154
       },
       "boundingHeight": {
-        "min": 198,
-        "max": 204
+        "min": 172,
+        "max": 198
       },
       "centroidX": {
-        "min": 88.67,
-        "max": 95.85
+        "min": 98.81,
+        "max": 104.9
       },
       "centroidY": {
-        "min": 109.31,
-        "max": 117.68
-      }
+        "min": 116.31,
+        "max": 124.91
+      },
+      "ghostingChecks": {
+        "largeInternalSemiTransparencyFrames": [],
+        "abnormalSilhouetteExpansionFrames": [],
+        "doubleContourHeuristicFrames": [],
+        "combinedGhostingFailureFrames": [],
+        "verdict": "pass",
+        "method": "interior-alpha + robust silhouette-area + opaque-component/contour-density heuristics"
+      },
+      "frames": [
+        {
+          "visibleArea": 18825,
+          "opaqueArea": 18074,
+          "semiTransparentPixels": 751,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 613,
+          "contourToAreaRatio": 0.032563,
+          "opaqueComponentAreas": [
+            18074
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 19156,
+          "opaqueArea": 18371,
+          "semiTransparentPixels": 785,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 619,
+          "contourToAreaRatio": 0.032314,
+          "opaqueComponentAreas": [
+            18371
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 18213,
+          "opaqueArea": 17456,
+          "semiTransparentPixels": 757,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 598,
+          "contourToAreaRatio": 0.032834,
+          "opaqueComponentAreas": [
+            17456
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 18174,
+          "opaqueArea": 17401,
+          "semiTransparentPixels": 773,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 585,
+          "contourToAreaRatio": 0.032189,
+          "opaqueComponentAreas": [
+            17401
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 18253,
+          "opaqueArea": 17454,
+          "semiTransparentPixels": 799,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 601,
+          "contourToAreaRatio": 0.032926,
+          "opaqueComponentAreas": [
+            17454
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 18520,
+          "opaqueArea": 17732,
+          "semiTransparentPixels": 788,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 583,
+          "contourToAreaRatio": 0.031479,
+          "opaqueComponentAreas": [
+            17732
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 18582,
+          "opaqueArea": 17807,
+          "semiTransparentPixels": 775,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 597,
+          "contourToAreaRatio": 0.032128,
+          "opaqueComponentAreas": [
+            17807
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 19186,
+          "opaqueArea": 18446,
+          "semiTransparentPixels": 740,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 566,
+          "contourToAreaRatio": 0.029501,
+          "opaqueComponentAreas": [
+            18446
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 18092,
+          "opaqueArea": 17356,
+          "semiTransparentPixels": 736,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 570,
+          "contourToAreaRatio": 0.031506,
+          "opaqueComponentAreas": [
+            17356
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 18248,
+          "opaqueArea": 17490,
+          "semiTransparentPixels": 758,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 581,
+          "contourToAreaRatio": 0.031839,
+          "opaqueComponentAreas": [
+            17490
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 17396,
+          "opaqueArea": 16703,
+          "semiTransparentPixels": 693,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 542,
+          "contourToAreaRatio": 0.031157,
+          "opaqueComponentAreas": [
+            16703
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 18163,
+          "opaqueArea": 17432,
+          "semiTransparentPixels": 731,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 559,
+          "contourToAreaRatio": 0.030777,
+          "opaqueComponentAreas": [
+            17432
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 17357,
+          "opaqueArea": 16622,
+          "semiTransparentPixels": 735,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 552,
+          "contourToAreaRatio": 0.031803,
+          "opaqueComponentAreas": [
+            16622
+          ],
+          "significantOpaqueComponents": 1
+        },
+        {
+          "visibleArea": 17817,
+          "opaqueArea": 17039,
+          "semiTransparentPixels": 778,
+          "internalSemiTransparentPixels": 0,
+          "internalSemiTransparentRatio": 0.0,
+          "contourPixels": 596,
+          "contourToAreaRatio": 0.033451,
+          "opaqueComponentAreas": [
+            17039
+          ],
+          "significantOpaqueComponents": 1
+        }
+      ]
     }
   },
   "visualReview": {
-    "contactSheet": "previews/actions-v2/contact-sheet.jpg",
+    "contactSheets": {
+      "checker": "previews/actions-v2/contact-sheet.jpg",
+      "black": "previews/actions-v2/contact-sheet-black.jpg",
+      "white": "previews/actions-v2/contact-sheet-white.jpg"
+    },
+    "gifDirectories": {
+      "checker": "previews/actions-v2",
+      "black": "previews/actions-v2/black",
+      "white": "previews/actions-v2/white"
+    },
     "verdict": "pass",
-    "note": "Identity-locked source frames stay dominant; large-motion transitions use conservative blend caps to prevent face, limb, and tail deformation."
+    "note": "Manually inspected checker, black, and white contact sheets: every frame contains one crisp complete Miaomiao silhouette; no double head, limbs, tail, interior translucency, or crossfade after extraction cleanup.",
+    "automaticPassForbidden": true
   }
 }

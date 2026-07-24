@@ -1,0 +1,224 @@
+{
+  "source": "assets/action-generation/idle-10-transparent.png",
+  "action": "idle",
+  "frameCount": 10,
+  "grid": {
+    "columns": 5,
+    "rows": 2
+  },
+  "cell": [
+    192,
+    208
+  ],
+  "anchor": "bottom",
+  "sharedScale": 0.55153203,
+  "independentlyDrawnPoses": true,
+  "crossfade": false,
+  "wholeSpriteBlend": false,
+  "frames": [
+    "pet/miaomiao/pose-sources/idle/pose-00.png",
+    "pet/miaomiao/pose-sources/idle/pose-01.png",
+    "pet/miaomiao/pose-sources/idle/pose-02.png",
+    "pet/miaomiao/pose-sources/idle/pose-03.png",
+    "pet/miaomiao/pose-sources/idle/pose-04.png",
+    "pet/miaomiao/pose-sources/idle/pose-05.png",
+    "pet/miaomiao/pose-sources/idle/pose-06.png",
+    "pet/miaomiao/pose-sources/idle/pose-07.png",
+    "pet/miaomiao/pose-sources/idle/pose-08.png",
+    "pet/miaomiao/pose-sources/idle/pose-09.png"
+  ],
+  "mirroredAction": null,
+  "mirroredFrames": [],
+  "sourceSlots": [
+    {
+      "index": 0,
+      "sourceSlot": [
+        0,
+        0,
+        389,
+        444
+      ],
+      "sourceVisibleBox": [
+        83,
+        59,
+        360,
+        405
+      ],
+      "sourcePoseSize": [
+        277,
+        346
+      ]
+    },
+    {
+      "index": 1,
+      "sourceSlot": [
+        389,
+        0,
+        727,
+        444
+      ],
+      "sourceVisibleBox": [
+        30,
+        59,
+        308,
+        406
+      ],
+      "sourcePoseSize": [
+        278,
+        347
+      ]
+    },
+    {
+      "index": 2,
+      "sourceSlot": [
+        727,
+        0,
+        1068,
+        444
+      ],
+      "sourceVisibleBox": [
+        31,
+        62,
+        310,
+        405
+      ],
+      "sourcePoseSize": [
+        279,
+        343
+      ]
+    },
+    {
+      "index": 3,
+      "sourceSlot": [
+        1068,
+        0,
+        1412,
+        444
+      ],
+      "sourceVisibleBox": [
+        31,
+        57,
+        310,
+        405
+      ],
+      "sourcePoseSize": [
+        279,
+        348
+      ]
+    },
+    {
+      "index": 4,
+      "sourceSlot": [
+        1412,
+        0,
+        1774,
+        444
+      ],
+      "sourceVisibleBox": [
+        34,
+        54,
+        314,
+        405
+      ],
+      "sourcePoseSize": [
+        280,
+        351
+      ]
+    },
+    {
+      "index": 5,
+      "sourceSlot": [
+        0,
+        444,
+        391,
+        887
+      ],
+      "sourceVisibleBox": [
+        84,
+        27,
+        366,
+        386
+      ],
+      "sourcePoseSize": [
+        282,
+        359
+      ]
+    },
+    {
+      "index": 6,
+      "sourceSlot": [
+        391,
+        444,
+        725,
+        887
+      ],
+      "sourceVisibleBox": [
+        26,
+        32,
+        307,
+        386
+      ],
+      "sourcePoseSize": [
+        281,
+        354
+      ]
+    },
+    {
+      "index": 7,
+      "sourceSlot": [
+        725,
+        444,
+        1064,
+        887
+      ],
+      "sourceVisibleBox": [
+        27,
+        31,
+        308,
+        386
+      ],
+      "sourcePoseSize": [
+        281,
+        355
+      ]
+    },
+    {
+      "index": 8,
+      "sourceSlot": [
+        1064,
+        444,
+        1406,
+        887
+      ],
+      "sourceVisibleBox": [
+        32,
+        39,
+        310,
+        386
+      ],
+      "sourcePoseSize": [
+        278,
+        347
+      ]
+    },
+    {
+      "index": 9,
+      "sourceSlot": [
+        1406,
+        444,
+        1774,
+        887
+      ],
+      "sourceVisibleBox": [
+        32,
+        39,
+        311,
+        386
+      ],
+      "sourcePoseSize": [
+        279,
+        347
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 [CmdletBinding()]
 param(
     [switch]$CheckOnly,
+    [switch]$SkipSync,
     [string]$WslDistro = "Ubuntu"
 )
 
@@ -9,12 +10,16 @@ $ErrorActionPreference = "Stop"
 $petDirectory = Join-Path $env:USERPROFILE ".codex\pets\miaomiao"
 $manifestPath = Join-Path $petDirectory "pet.json"
 $spritesheetPath = Join-Path $petDirectory "spritesheet.webp"
+$projectDirectory = Split-Path -Parent $MyInvocation.MyCommand.Path
+$sourcePetDirectory = Join-Path $projectDirectory "pet\miaomiao"
+$sourceManifestPath = Join-Path $sourcePetDirectory "pet.json"
+$sourceSpritesheetPath = Join-Path $sourcePetDirectory "spritesheet.webp"
 
-if (-not (Test-Path -LiteralPath $manifestPath -PathType Leaf)) {
-    throw "Missing $manifestPath. Run .\install.ps1 from the project root first."
+if (-not (Test-Path -LiteralPath $sourceManifestPath -PathType Leaf)) {
+    throw "Project pet manifest is missing: $sourceManifestPath"
 }
-if (-not (Test-Path -LiteralPath $spritesheetPath -PathType Leaf)) {
-    throw "Missing $spritesheetPath. Run .\install.ps1 from the project root first."
+if (-not (Test-Path -LiteralPath $sourceSpritesheetPath -PathType Leaf)) {
+    throw "Project spritesheet is missing: $sourceSpritesheetPath"
 }
 
 $package = Get-AppxPackage -Name "OpenAI.Codex" | Sort-Object Version -Descending | Select-Object -First 1
@@ -31,6 +36,32 @@ if (-not (Test-Path -LiteralPath "$env:SystemRoot\System32\wsl.exe" -PathType Le
     throw "WSL is not installed. Start Codex normally and refresh the Pets page."
 }
 $distro = $WslDistro
+
+if (-not $SkipSync) {
+    New-Item -ItemType Directory -Path $petDirectory -Force | Out-Null
+    Copy-Item -LiteralPath $sourceManifestPath -Destination $manifestPath -Force
+    Copy-Item -LiteralPath $sourceSpritesheetPath -Destination $spritesheetPath -Force
+
+    $sourceManifestHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $sourceManifestPath).Hash
+    $installedManifestHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $manifestPath).Hash
+    $sourceSpriteHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $sourceSpritesheetPath).Hash
+    $installedSpriteHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $spritesheetPath).Hash
+    if (
+        $sourceManifestHash -ne $installedManifestHash -or
+        $sourceSpriteHash -ne $installedSpriteHash
+    ) {
+        throw "Miaomiao sync verification failed."
+    }
+    Write-Host "Synced current project pet into $petDirectory"
+    Write-Host "Spritesheet SHA256: $sourceSpriteHash"
+}
+
+if (-not (Test-Path -LiteralPath $manifestPath -PathType Leaf)) {
+    throw "Missing installed manifest: $manifestPath"
+}
+if (-not (Test-Path -LiteralPath $spritesheetPath -PathType Leaf)) {
+    throw "Missing installed spritesheet: $spritesheetPath"
+}
 
 Write-Host "Miaomiao directory: $petDirectory"
 Write-Host "Codex version: $($package.Version)"

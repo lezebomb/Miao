@@ -1,5 +1,5 @@
 {
-  "formatVersion": 1,
+  "formatVersion": 2,
   "cell": {
     "width": 192,
     "height": 208
@@ -16,15 +16,15 @@
         "actions/idle/frame-06.png",
         "actions/idle/frame-07.png",
         "actions/idle/frame-08.png",
-        "actions/idle/frame-09.png",
-        "actions/idle/frame-10.png",
-        "actions/idle/frame-11.png"
+        "actions/idle/frame-09.png"
       ],
-      "frameDurationMs": 140,
+      "frameDurationMs": 155,
       "loop": true,
       "sourceAtlasRow": 0,
       "sourceFrameCount": 6,
-      "interpolation": "identity-locked-centroid-registration-with-capped-premultiplied-transition"
+      "frameGeneration": "independently-drawn-poses",
+      "source": "pet/miaomiao/pose-sources/idle",
+      "crossfadeInterpolation": false
     },
     "running-right": {
       "frames": [
@@ -37,19 +37,15 @@
         "actions/running-right/frame-06.png",
         "actions/running-right/frame-07.png",
         "actions/running-right/frame-08.png",
-        "actions/running-right/frame-09.png",
-        "actions/running-right/frame-10.png",
-        "actions/running-right/frame-11.png",
-        "actions/running-right/frame-12.png",
-        "actions/running-right/frame-13.png",
-        "actions/running-right/frame-14.png",
-        "actions/running-right/frame-15.png"
+        "actions/running-right/frame-09.png"
       ],
-      "frameDurationMs": 70,
+      "frameDurationMs": 85,
       "loop": true,
       "sourceAtlasRow": 1,
       "sourceFrameCount": 8,
-      "interpolation": "identity-locked-centroid-registration-with-capped-premultiplied-transition"
+      "frameGeneration": "independently-drawn-poses",
+      "source": "pet/miaomiao/pose-sources/running-right",
+      "crossfadeInterpolation": false
     },
     "running-left": {
       "frames": [
@@ -62,19 +58,15 @@
         "actions/running-left/frame-06.png",
         "actions/running-left/frame-07.png",
         "actions/running-left/frame-08.png",
-        "actions/running-left/frame-09.png",
-        "actions/running-left/frame-10.png",
-        "actions/running-left/frame-11.png",
-        "actions/running-left/frame-12.png",
-        "actions/running-left/frame-13.png",
-        "actions/running-left/frame-14.png",
-        "actions/running-left/frame-15.png"
+        "actions/running-left/frame-09.png"
       ],
-      "frameDurationMs": 70,
+      "frameDurationMs": 85,
       "loop": true,
       "sourceAtlasRow": 2,
       "sourceFrameCount": 8,
-      "interpolation": "identity-locked-centroid-registration-with-capped-premultiplied-transition"
+      "frameGeneration": "independently-drawn-poses",
+      "source": "pet/miaomiao/pose-sources/running-left",
+      "crossfadeInterpolation": false
     },
     "roll": {
       "frames": [
@@ -95,11 +87,13 @@
         "actions/roll/frame-14.png",
         "actions/roll/frame-15.png"
       ],
-      "frameDurationMs": 95,
+      "frameDurationMs": 120,
       "loop": false,
       "sourceAtlasRow": 5,
       "sourceFrameCount": 8,
-      "interpolation": "identity-locked-centroid-registration-with-capped-premultiplied-transition"
+      "frameGeneration": "independently-drawn-poses",
+      "source": "pet/miaomiao/pose-sources/roll",
+      "crossfadeInterpolation": false
     },
     "knead": {
       "frames": [
@@ -116,15 +110,15 @@
         "actions/knead/frame-10.png",
         "actions/knead/frame-11.png",
         "actions/knead/frame-12.png",
-        "actions/knead/frame-13.png",
-        "actions/knead/frame-14.png",
-        "actions/knead/frame-15.png"
+        "actions/knead/frame-13.png"
       ],
-      "frameDurationMs": 105,
-      "loop": false,
+      "frameDurationMs": 115,
+      "loop": true,
       "sourceAtlasRow": 7,
       "sourceFrameCount": 6,
-      "interpolation": "identity-locked-centroid-registration-with-capped-premultiplied-transition"
+      "frameGeneration": "independently-drawn-poses",
+      "source": "pet/miaomiao/pose-sources/knead",
+      "crossfadeInterpolation": false
     },
     "wash-face": {
       "frames": [
@@ -141,15 +135,15 @@
         "actions/wash-face/frame-10.png",
         "actions/wash-face/frame-11.png",
         "actions/wash-face/frame-12.png",
-        "actions/wash-face/frame-13.png",
-        "actions/wash-face/frame-14.png",
-        "actions/wash-face/frame-15.png"
+        "actions/wash-face/frame-13.png"
       ],
-      "frameDurationMs": 115,
+      "frameDurationMs": 130,
       "loop": false,
       "sourceAtlasRow": 8,
       "sourceFrameCount": 6,
-      "interpolation": "identity-locked-centroid-registration-with-capped-premultiplied-transition"
+      "frameGeneration": "independently-drawn-poses",
+      "source": "pet/miaomiao/pose-sources/wash-face",
+      "crossfadeInterpolation": false
     }
   },
   "events": {

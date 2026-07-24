@@ -1,20 +1,24 @@
 # 妙妙：金渐层交互桌宠
 
-妙妙是基于项目内真实照片和动作视频制作的半写实金渐层桌宠。她保留圆脸、绿色圆眼、粉色鼻头、暖金底色与黑色毛尖、浅色下巴胸腹，以及蓬松环纹黑尾尖。
+妙妙是在现有项目和真实照片基础上持续迭代的金渐层桌宠。本轮没有重做角色设计，保留了圆脸、绿色眼睛、金色黑毛尖、正常长度黑尾尖和原有桌宠尺寸。
 
 ![妙妙动作总览](previews/actions-v2/contact-sheet.jpg)
 
-## 本次动画升级
+## 本轮动画修复
 
-- 待机“眨眼 + 往旁边看”扩展为 12 帧。
-- 左右跑扩展为各 16 帧，并保持循环首尾和基线稳定。
-- 撒娇打滚、踩奶、洗脸均扩展为 16 帧透明序列。
-- 抚摸或 hover 时，以 1/2 概率随机播放“撒娇打滚”或“踩奶”。
-- idle 默认保持轻微呼吸、眨眼和侧看；洗脸作为低频随机分支，每 35–65 秒最多触发一次。
+- 完全移除了整只猫之间的 `premultiplied_blend`、`tween_loop` 和 crossfade 插帧。
+- 构建器现在只接受两类帧：原图集里的干净关键帧，或独立绘制的完整动作姿势。
+- `idle`：10 个独立姿势，包含闭眼、睁眼、侧看和轻微头耳变化。
+- `running-right` / `running-left`：各 10 个真实步态姿势；左跑由已验收的右跑逐帧镜像，帧序不变。
+- `knead`：14 个独立姿势，前半身支起，左右前爪交替抬起和按压，肩背轻微联动。
+- `wash-face`：14 个独立姿势，按“抬爪 → 擦脸 → 再擦 → 放下”组织。
+- `roll`：16 个独立姿势，包含趴低、侧躺、翻背露肚、转向和恢复。
+- 抚摸或 hover 在项目交互桌宠中以 `50% / 50%` 随机触发 `roll` 或 `knead`。
+- `wash-face` 是低频随机 idle 分支，冷却时间随机为 35–65 秒。
 
-扩展帧以现有妙妙图集为身份锚点，并结合项目里的“撒娇打滚”“踩奶”“躺着用爪子洗脸”视频动作设计。构建脚本不会重新设计妙妙，也不会改变单格 `192×208`、透明背景或整体尺寸。
+所有扩展帧均为 `192×208` 透明 PNG。生成过程不会把两张完整猫图混合在一起。
 
-## 启动交互桌宠（Windows）
+## 启动项目交互桌宠
 
 双击：
 
@@ -22,49 +26,56 @@
 launch-miaomiao-desktop.cmd
 ```
 
-交互方式：
+交互：
 
 - 鼠标移入或单击：随机打滚 / 踩奶
 - 左右拖动：对应方向跑动
-- 待机：普通待机，偶尔洗脸
+- 待机：普通待机，低频随机洗脸
 - 右键：关闭
 
-仅验证动作包而不打开窗口：
+仅检查动作包：
 
 ```powershell
 .\launch-miaomiao-desktop.ps1 -CheckOnly
 ```
 
-## 安装为 Codex v2 宠物
+## 一键更新并启动 Codex 宠物
 
-标准 Codex 宠物包仍位于 `pet/miaomiao/`：
+先完全退出 Codex，再双击：
 
-```powershell
-.\install.ps1
+```text
+launch-codex-miaomiao.cmd
 ```
 
-然后在 Codex 的“设置 → 宠物”中刷新并选择“妙妙”。
+启动器会先把当前仓库中的 `pet.json` 和 `spritesheet.webp` 同步到
+`%USERPROFILE%\.codex\pets\miaomiao`，校验 SHA-256 后再启动 Codex。因此每次拉取或重建项目后，无需重复运行安装脚本。
 
-需要注意：Codex 26.715 的 v2 渲染器固定为 `8×11` 图集，并在客户端硬编码每个标准状态的帧数；hover 也固定映射到 `jumping`。`pet.json` 不支持随机事件或 idle 动作池。项目因此保留标准 Codex 包，同时用 `behavior.json` 和 Windows 交互启动器实现本次要求的高帧数及随机行为。详见 [动作与状态映射](docs/动作与状态映射.md)。
+Codex 当前的标准 v2 渲染器仍固定各状态帧数，并把 hover 映射到 `jumping`；`pet.json` 本身不支持随机事件或自定义 idle 池。因此：
+
+- Codex 内置宠物会使用本轮更新后的 6 帧 idle 和各 8 帧左右跑。
+- 50/50 抚摸随机、14 帧踩奶、14 帧洗脸和 16 帧打滚由项目交互启动器读取 `behavior.json` 实现。
 
 ## 关键文件
 
 ```text
 pet/miaomiao/
-  pet.json              Codex v2 配置
-  spritesheet.webp      1536×2288 标准透明图集
-  behavior.json         交互事件与动作池
-  actions/*/*.png       12–16 帧透明动作序列
+  pet.json
+  spritesheet.webp
+  behavior.json
+  actions/*/*.png
+  pose-sources/*/*.png
 
 previews/actions-v2/
-  contact-sheet.jpg     新动作接触表
-  *.gif                 动作循环预览
+  contact-sheet.jpg
+  contact-sheet-black.jpg
+  contact-sheet-white.jpg
+  black/*.gif
+  white/*.gif
+  validation.json
 
 scripts/build_action_assets.py
-                        从已验证图集重建高帧数动作资产
-
-launch-miaomiao-desktop.*
-                        Windows 透明置顶交互桌宠
+scripts/extract_action_pose_sheet.py
+scripts/update_codex_atlas_actions.py
 ```
 
-原始视频保留在本地 `references/videos/`，仓库提交精选关键帧、构建脚本、最终动作与 QA 预览。
+独立姿势的生成源表保留在 `assets/action-generation/`，裁切后的规范姿势位于 `pet/miaomiao/pose-sources/`；真实动作参考关键帧位于 `assets/video-keyframes/`。

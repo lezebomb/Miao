@@ -1,0 +1,235 @@
+{
+  "source": "assets/action-generation/running-right-10-transparent.png",
+  "action": "running-right",
+  "frameCount": 10,
+  "grid": {
+    "columns": 5,
+    "rows": 2
+  },
+  "cell": [
+    192,
+    208
+  ],
+  "anchor": "center",
+  "sharedScale": 0.50137741,
+  "independentlyDrawnPoses": true,
+  "crossfade": false,
+  "wholeSpriteBlend": false,
+  "frames": [
+    "pet/miaomiao/pose-sources/running-right/pose-00.png",
+    "pet/miaomiao/pose-sources/running-right/pose-01.png",
+    "pet/miaomiao/pose-sources/running-right/pose-02.png",
+    "pet/miaomiao/pose-sources/running-right/pose-03.png",
+    "pet/miaomiao/pose-sources/running-right/pose-04.png",
+    "pet/miaomiao/pose-sources/running-right/pose-05.png",
+    "pet/miaomiao/pose-sources/running-right/pose-06.png",
+    "pet/miaomiao/pose-sources/running-right/pose-07.png",
+    "pet/miaomiao/pose-sources/running-right/pose-08.png",
+    "pet/miaomiao/pose-sources/running-right/pose-09.png"
+  ],
+  "mirroredAction": "running-left",
+  "mirroredFrames": [
+    "pet/miaomiao/pose-sources/running-left/pose-00.png",
+    "pet/miaomiao/pose-sources/running-left/pose-01.png",
+    "pet/miaomiao/pose-sources/running-left/pose-02.png",
+    "pet/miaomiao/pose-sources/running-left/pose-03.png",
+    "pet/miaomiao/pose-sources/running-left/pose-04.png",
+    "pet/miaomiao/pose-sources/running-left/pose-05.png",
+    "pet/miaomiao/pose-sources/running-left/pose-06.png",
+    "pet/miaomiao/pose-sources/running-left/pose-07.png",
+    "pet/miaomiao/pose-sources/running-left/pose-08.png",
+    "pet/miaomiao/pose-sources/running-left/pose-09.png"
+  ],
+  "sourceSlots": [
+    {
+      "index": 0,
+      "sourceSlot": [
+        0,
+        0,
+        346,
+        444
+      ],
+      "sourceVisibleBox": [
+        18,
+        184,
+        312,
+        347
+      ],
+      "sourcePoseSize": [
+        294,
+        163
+      ]
+    },
+    {
+      "index": 1,
+      "sourceSlot": [
+        346,
+        0,
+        694,
+        444
+      ],
+      "sourceVisibleBox": [
+        35,
+        167,
+        318,
+        359
+      ],
+      "sourcePoseSize": [
+        283,
+        192
+      ]
+    },
+    {
+      "index": 2,
+      "sourceSlot": [
+        694,
+        0,
+        1065,
+        444
+      ],
+      "sourceVisibleBox": [
+        30,
+        191,
+        351,
+        341
+      ],
+      "sourcePoseSize": [
+        321,
+        150
+      ]
+    },
+    {
+      "index": 3,
+      "sourceSlot": [
+        1065,
+        0,
+        1428,
+        444
+      ],
+      "sourceVisibleBox": [
+        20,
+        188,
+        348,
+        335
+      ],
+      "sourcePoseSize": [
+        328,
+        147
+      ]
+    },
+    {
+      "index": 4,
+      "sourceSlot": [
+        1428,
+        0,
+        1774,
+        444
+      ],
+      "sourceVisibleBox": [
+        15,
+        209,
+        324,
+        357
+      ],
+      "sourcePoseSize": [
+        309,
+        148
+      ]
+    },
+    {
+      "index": 5,
+      "sourceSlot": [
+        0,
+        444,
+        355,
+        887
+      ],
+      "sourceVisibleBox": [
+        17,
+        96,
+        338,
+        277
+      ],
+      "sourcePoseSize": [
+        321,
+        181
+      ]
+    },
+    {
+      "index": 6,
+      "sourceSlot": [
+        355,
+        444,
+        696,
+        887
+      ],
+      "sourceVisibleBox": [
+        17,
+        119,
+        316,
+        277
+      ],
+      "sourcePoseSize": [
+        299,
+        158
+      ]
+    },
+    {
+      "index": 7,
+      "sourceSlot": [
+        696,
+        444,
+        1041,
+        887
+      ],
+      "sourceVisibleBox": [
+        25,
+        97,
+        328,
+        272
+      ],
+      "sourcePoseSize": [
+        303,
+        175
+      ]
+    },
+    {
+      "index": 8,
+      "sourceSlot": [
+        1041,
+        444,
+        1433,
+        887
+      ],
+      "sourceVisibleBox": [
+        17,
+        128,
+        380,
+        286
+      ],
+      "sourcePoseSize": [
+        363,
+        158
+      ]
+    },
+    {
+      "index": 9,
+      "sourceSlot": [
+        1433,
+        444,
+        1774,
+        887
+      ],
+      "sourceVisibleBox": [
+        13,
+        116,
+        306,
+        278
+      ],
+      "sourcePoseSize": [
+        293,
+        162
+      ]
+    }
+  ]
+}
