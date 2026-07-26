@@ -1,0 +1,23 @@
+{
+  "formatVersion": 1,
+  "globalDurationScale": 1.0,
+  "windowScale": 1.0,
+  "idlePauseRangeMs": [
+    3000,
+    6000
+  ],
+  "hoverDwellMs": 500,
+  "triggerCooldownMs": 2000,
+  "drag": {
+    "horizontalThresholdPx": 16,
+    "horizontalDominanceRatio": 1.35
+  },
+  "codexWindow": {
+    "placement": "outside-right-bottom",
+    "offsetX": 16,
+    "offsetY": -16,
+    "edgePadding": 16,
+    "followIntervalMs": 100,
+    "waitTimeoutMs": 60000
+  }
+}
