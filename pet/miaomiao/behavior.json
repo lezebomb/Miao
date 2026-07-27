@@ -14,7 +14,7 @@
         1000
       ],
       "repeatCount": 1,
-      "loop": true,
+      "loop": false,
       "frameProvenance": "clean-original-atlas-keyframes",
       "interpolation": "none-independent-poses-only"
     },
@@ -93,70 +93,31 @@
         "actions/roll/frame-16.png",
         "actions/roll/frame-17.png"
       ],
-      "frameDurationMs": 160,
+      "frameDurationMs": 340,
       "frameDurationsMs": [
-        160,
-        140,
-        120,
-        100,
-        85,
-        80,
-        75,
-        75,
-        220,
+        340,
+        320,
+        300,
+        280,
+        260,
         240,
-        220,
-        75,
-        80,
-        90,
-        120,
-        160,
+        210,
         190,
-        210
+        350,
+        350,
+        260,
+        240,
+        260,
+        300,
+        340,
+        360,
+        340,
+        260
       ],
       "repeatCount": 1,
       "loop": false,
       "frameProvenance": "independent-poses-with-two-frame-idle-return",
-      "interpolation": "independent-poses-with-runtime-transform-easing",
-      "motion": {
-        "standardFrames": [
-          4,
-          5,
-          6,
-          7,
-          11,
-          12,
-          13
-        ],
-        "holdFrames": [
-          8,
-          9,
-          10
-        ],
-        "bounceKeyframes": [
-          {
-            "frame": 14,
-            "y": -1.5,
-            "rotation": -0.7,
-            "scaleX": 1.008,
-            "scaleY": 0.992
-          },
-          {
-            "frame": 15,
-            "y": 1.0,
-            "rotation": 0.55,
-            "scaleX": 0.994,
-            "scaleY": 1.006
-          },
-          {
-            "frame": 16,
-            "y": -0.35,
-            "rotation": -0.2,
-            "scaleX": 1.002,
-            "scaleY": 0.998
-          }
-        ]
-      }
+      "interpolation": "none-independent-poses-only"
     },
     "knead": {
       "frames": [
@@ -173,62 +134,26 @@
         "actions/knead/frame-10.png",
         "actions/knead/frame-11.png"
       ],
-      "frameDurationMs": 120,
+      "frameDurationMs": 140,
       "frameDurationsMs": [
+        140,
         120,
-        105,
-        105,
-        115,
+        140,
+        170,
+        200,
+        150,
         120,
-        105,
-        105,
-        115,
-        120,
-        110,
-        110,
-        110
+        140,
+        170,
+        200,
+        180,
+        150
       ],
-      "repeatCount": 2,
+      "repeatCount": 3,
       "loop": false,
       "frameProvenance": "independent-poses-with-closed-support-cycle",
-      "interpolation": "independent-poses-with-runtime-transform-easing",
-      "outroAction": "knead-outro",
-      "motion": {
-        "contactFrames": [
-          3,
-          4,
-          8,
-          9
-        ],
-        "liftFrames": [
-          1,
-          2,
-          6,
-          7
-        ],
-        "leftPawFrames": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "rightPawFrames": [
-          6,
-          7,
-          8,
-          9
-        ],
-        "bodyBobPx": 1.5,
-        "maxTiltDeg": 1.35,
-        "pressScale": [
-          1.04,
-          0.96
-        ],
-        "liftScale": [
-          0.98,
-          1.02
-        ]
-      }
+      "interpolation": "none-independent-poses-only",
+      "outroAction": "knead-outro"
     },
     "wash-face": {
       "frames": [
@@ -357,91 +282,6 @@
       "loop": false,
       "frameProvenance": "independent-poses-with-two-frame-idle-return",
       "interpolation": "none-independent-poses-only"
-    },
-    "prepare-roll": {
-      "frames": [
-        "actions/idle/frame-00.png",
-        "actions/roll/frame-00.png"
-      ],
-      "frameDurationMs": 60,
-      "frameDurationsMs": [
-        60,
-        60
-      ],
-      "repeatCount": 1,
-      "loop": false,
-      "frameProvenance": "independent-universal-preparation-poses",
-      "interpolation": "runtime-transform-easing-no-alpha-crossfade"
-    },
-    "prepare-knead": {
-      "frames": [
-        "actions/idle/frame-00.png",
-        "actions/knead/frame-00.png"
-      ],
-      "frameDurationMs": 60,
-      "frameDurationsMs": [
-        60,
-        60
-      ],
-      "repeatCount": 1,
-      "loop": false,
-      "frameProvenance": "independent-universal-preparation-poses",
-      "interpolation": "runtime-transform-easing-no-alpha-crossfade"
-    },
-    "sleep": {
-      "frames": [
-        "actions/idle/frame-01.png"
-      ],
-      "frameDurationMs": 1000,
-      "frameDurationsMs": [
-        1000
-      ],
-      "repeatCount": 1,
-      "loop": true,
-      "frameProvenance": "clean-original-closed-eye-keyframe",
-      "interpolation": "runtime-breathing-transform-only"
-    },
-    "wake": {
-      "frames": [
-        "actions/idle/frame-01.png",
-        "actions/idle/frame-02.png",
-        "actions/idle/frame-00.png"
-      ],
-      "frameDurationMs": 180,
-      "frameDurationsMs": [
-        180,
-        160,
-        200
-      ],
-      "repeatCount": 1,
-      "loop": false,
-      "frameProvenance": "clean-original-eye-opening-keyframes",
-      "interpolation": "runtime-transform-easing-no-alpha-crossfade"
-    },
-    "stretch": {
-      "frames": [
-        "actions/idle/frame-00.png",
-        "actions/roll/frame-00.png",
-        "actions/roll/frame-01.png",
-        "actions/roll/frame-02.png",
-        "actions/roll/frame-01.png",
-        "actions/roll/frame-00.png",
-        "actions/idle/frame-00.png"
-      ],
-      "frameDurationMs": 160,
-      "frameDurationsMs": [
-        160,
-        140,
-        180,
-        240,
-        180,
-        140,
-        160
-      ],
-      "repeatCount": 1,
-      "loop": false,
-      "frameProvenance": "independent-existing-lowering-and-return-poses",
-      "interpolation": "runtime-transform-easing-no-alpha-crossfade"
     }
   },
   "events": {
@@ -482,20 +322,6 @@
         {
           "action": "wash-face",
           "weight": 0.3
-        }
-      ],
-      "specialActions": [
-        {
-          "action": "ear-twitch",
-          "weight": 0.35
-        },
-        {
-          "action": "wash-face",
-          "weight": 0.4
-        },
-        {
-          "action": "stretch",
-          "weight": 0.25
         }
       ],
       "specialCheckIntervalMs": [

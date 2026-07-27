@@ -8,25 +8,6 @@
   ],
   "hoverDwellMs": 500,
   "triggerCooldownMs": 2000,
-  "renderer": {
-    "engine": "canvas",
-    "targetFps": 60,
-    "alphaCrossfade": false,
-    "transformInterpolation": true,
-    "edgeSmoothing": {
-      "enabled": true,
-      "blurPx": 0.7,
-      "alpha": 0.24
-    }
-  },
-  "idle": {
-    "basicActionIntervalMs": [
-      4000,
-      8000
-    ],
-    "specialAfterMs": 30000,
-    "sleepAfterMs": 180000
-  },
   "drag": {
     "horizontalThresholdPx": 16,
     "horizontalDominanceRatio": 1.35

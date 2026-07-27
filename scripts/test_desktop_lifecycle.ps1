@@ -40,20 +40,20 @@ public static class MiaomiaoLifecycleNative {
 
     [DllImport("user32.dll")]
     public static extern bool ShowWindow(IntPtr hWnd, int command);
-
-    [DllImport("user32.dll", CharSet = CharSet.Unicode)]
-    public static extern int GetWindowText(IntPtr hWnd, System.Text.StringBuilder text, int count);
 }
 "@
 }
 
-function Find-MiaomiaoWindow {
+function Find-VisibleWindowForProcess([int]$processId) {
     $handles = New-Object System.Collections.Generic.List[long]
     [MiaomiaoLifecycleNative]::EnumWindows({
         param($windowHandle, $state)
-        $title = New-Object System.Text.StringBuilder 64
-        [void][MiaomiaoLifecycleNative]::GetWindowText($windowHandle, $title, $title.Capacity)
-        if ($title.ToString() -eq ([string]([char]0x5999) + [char]0x5999) -and
+        $ownerProcessId = 0
+        [void][MiaomiaoLifecycleNative]::GetWindowThreadProcessId(
+            $windowHandle,
+            [ref]$ownerProcessId
+        )
+        if ($ownerProcessId -eq $processId -and
             [MiaomiaoLifecycleNative]::IsWindowVisible($windowHandle)) {
             $handles.Add($windowHandle.ToInt64())
         }
@@ -90,7 +90,7 @@ $desktopLauncher = Join-Path $projectRoot "launch-miaomiao-desktop.ps1"
 $hostWindow = New-Object System.Windows.Forms.Form
 $hostWindow.Text = "Codex Lifecycle Test Host"
 $hostWindow.StartPosition = [System.Windows.Forms.FormStartPosition]::Manual
-$hostWindow.SetBounds(80, 60, 400, 260)
+$hostWindow.SetBounds(100, 100, 700, 500)
 $hostWindow.Show()
 [System.Windows.Forms.Application]::DoEvents()
 
@@ -111,33 +111,23 @@ $petProcess = Start-Process -FilePath "powershell.exe" `
 try {
     $script:petHandle = [IntPtr]::Zero
     Wait-Until {
-        $script:petHandle = Find-MiaomiaoWindow
+        $script:petHandle = Find-VisibleWindowForProcess $petProcess.Id
         $script:petHandle -ne [IntPtr]::Zero
     } 5000 "Miaomiao window did not appear."
 
-    # Allow the Electron renderer to finish preloading frames and the persistent
-    # Win32 host bridge to publish its first placement sample.
-    Start-Sleep -Milliseconds 1600
+    Start-Sleep -Milliseconds 400
     $before = Get-Rect $script:petHandle
     $hostBefore = Get-Rect $hostHandle
-    $hostWindow.SetBounds(160, 120, 400, 260)
+    $hostWindow.SetBounds(220, 180, 700, 500)
     [System.Windows.Forms.Application]::DoEvents()
     $hostAfter = Get-Rect $hostHandle
     $expectedDx = $hostAfter.Left - $hostBefore.Left
     $expectedDy = $hostAfter.Top - $hostBefore.Top
-    try {
-        Wait-Until {
-            $after = Get-Rect $script:petHandle
-            [Math]::Abs(($after.Left - $before.Left) - $expectedDx) -le 8 -and
-            [Math]::Abs(($after.Top - $before.Top) - $expectedDy) -le 8
-        } 3000 "Miaomiao did not follow the host move."
-    }
-    catch {
+    Wait-Until {
         $after = Get-Rect $script:petHandle
-        $actualDx = $after.Left - $before.Left
-        $actualDy = $after.Top - $before.Top
-        throw "Miaomiao did not follow the host move. Expected delta=($expectedDx,$expectedDy); actual delta=($actualDx,$actualDy)."
-    }
+        [Math]::Abs(($after.Left - $before.Left) - $expectedDx) -le 8 -and
+        [Math]::Abs(($after.Top - $before.Top) - $expectedDy) -le 8
+    } 3000 "Miaomiao did not follow the host move."
 
     $hostWindow.WindowState = [System.Windows.Forms.FormWindowState]::Minimized
     [System.Windows.Forms.Application]::DoEvents()

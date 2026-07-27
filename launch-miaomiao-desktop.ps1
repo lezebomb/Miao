@@ -3,58 +3,10 @@ param(
     [switch]$CheckOnly,
     [switch]$FollowCodex,
     [long]$CodexWindowHandle = 0,
-    [int]$CodexProcessId = 0,
-    [switch]$LegacyWpf
+    [int]$CodexProcessId = 0
 )
 
 $ErrorActionPreference = "Stop"
-
-$projectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
-$packagePath = Join-Path $projectRoot "package.json"
-$electronCommand = Join-Path $projectRoot "node_modules\.bin\electron.cmd"
-$electronBinary = Join-Path $projectRoot "node_modules\electron\dist\electron.exe"
-
-if (-not $LegacyWpf -and -not $CheckOnly) {
-    if (-not (Test-Path -LiteralPath $electronCommand -PathType Leaf) -or
-        -not (Test-Path -LiteralPath $electronBinary -PathType Leaf)) {
-        $npm = Get-Command npm.cmd -ErrorAction SilentlyContinue
-        if ($null -eq $npm) {
-            throw "Canvas renderer dependencies are missing and npm.cmd is unavailable."
-        }
-        Write-Host "Installing Miaomiao Canvas renderer runtime..."
-        if ([string]::IsNullOrWhiteSpace($env:ELECTRON_MIRROR)) {
-            $env:ELECTRON_MIRROR = "https://npmmirror.com/mirrors/electron/"
-        }
-        & $npm.Source install --no-audit --no-fund --prefix $projectRoot
-        if ($LASTEXITCODE -ne 0) {
-            throw "npm install failed with exit code $LASTEXITCODE."
-        }
-        if (-not (Test-Path -LiteralPath $electronBinary -PathType Leaf)) {
-            $node = Get-Command node.exe -ErrorAction SilentlyContinue
-            $installer = Join-Path $projectRoot "node_modules\electron\install.js"
-            if ($null -eq $node -or -not (Test-Path -LiteralPath $installer -PathType Leaf)) {
-                throw "Electron package installed, but its Windows runtime is unavailable."
-            }
-            & $node.Source $installer
-            if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $electronBinary -PathType Leaf)) {
-                throw "Electron Windows runtime download failed."
-            }
-        }
-    }
-    $electronArguments = @($projectRoot)
-    if ($FollowCodex) {
-        if ($CodexWindowHandle -eq 0) {
-            throw "FollowCodex requires CodexWindowHandle."
-        }
-        $electronArguments += "--follow-hwnd=$CodexWindowHandle"
-        $electronArguments += "--follow-pid=$CodexProcessId"
-    }
-    & $electronCommand @electronArguments
-    if ($LASTEXITCODE -ne 0) {
-        throw "Miaomiao Canvas renderer exited with code $LASTEXITCODE."
-    }
-    return
-}
 
 Add-Type -AssemblyName PresentationCore,PresentationFramework,WindowsBase,System.Windows.Forms
 
@@ -84,6 +36,7 @@ public static class MiaomiaoNativeWindow {
 "@
 }
 
+$projectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $petRoot = Join-Path $projectRoot "pet\miaomiao"
 $manifestPath = Join-Path $petRoot "behavior.json"
 $configPath = Join-Path $projectRoot "miaomiao.config.json"
@@ -152,25 +105,12 @@ $dragDominanceRatio = Get-NumberProperty $config.drag "horizontalDominanceRatio"
 $followIntervalMs = [int](Get-NumberProperty $config.codexWindow "followIntervalMs" 100)
 
 if ($CheckOnly) {
-    foreach ($rendererFile in @(
-        $packagePath,
-        (Join-Path $projectRoot "main.js"),
-        (Join-Path $projectRoot "preload.cjs"),
-        (Join-Path $projectRoot "renderer\animator.js"),
-        (Join-Path $projectRoot "renderer\canvasRenderer.js"),
-        (Join-Path $projectRoot "renderer\stateMachine.js")
-    )) {
-        if (-not (Test-Path -LiteralPath $rendererFile -PathType Leaf)) {
-            throw "Missing Canvas renderer file: $rendererFile"
-        }
-    }
     $rollMs = (@($behavior.actions.roll.frameDurationsMs) | Measure-Object -Sum).Sum
     $kneadCycleMs = (@($behavior.actions.knead.frameDurationsMs) | Measure-Object -Sum).Sum
     $kneadOutroMs = (@($behavior.actions."knead-outro".frameDurationsMs) | Measure-Object -Sum).Sum
     $kneadTotalMs = $kneadCycleMs * [int]$behavior.actions.knead.repeatCount + $kneadOutroMs
     $washMs = (@($behavior.actions."wash-face".frameDurationsMs) | Measure-Object -Sum).Sum
     Write-Host "Miaomiao desktop validation passed."
-    Write-Host "Renderer: Electron Canvas with requestAnimationFrame and independent-pose transitions."
     Write-Host "Config: $configPath"
     Write-Host "globalDurationScale=$durationScale; windowScale=$windowScale"
     Write-Host "roll=${rollMs}ms; knead=${kneadCycleMs}ms x $($behavior.actions.knead.repeatCount) + ${kneadOutroMs}ms return = ${kneadTotalMs}ms; wash-face=${washMs}ms"
