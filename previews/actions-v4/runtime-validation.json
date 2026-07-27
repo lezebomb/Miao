@@ -1,0 +1,156 @@
+{
+  "ok": true,
+  "generatedAt": "2026-07-27T08:38:50.730Z",
+  "engine": "Electron Renderer Process + Canvas 2D + requestAnimationFrame",
+  "policy": {
+    "fullCharacterAlphaCrossfade": "disabled",
+    "frameInterpolation": "continuous transform interpolation only",
+    "sourceFrames": "independent opaque PNG poses"
+  },
+  "smokePreviews": {
+    "transparent": [
+      "previews/actions-v4/canvas-smoke-knead.png",
+      "previews/actions-v4/canvas-smoke-roll.png"
+    ],
+    "black": [
+      "previews/actions-v4/black/knead.png",
+      "previews/actions-v4/black/roll.png"
+    ],
+    "white": [
+      "previews/actions-v4/white/knead.png",
+      "previews/actions-v4/white/roll.png"
+    ]
+  },
+  "checks": [
+    {
+      "name": "idle:duration-count",
+      "passed": true,
+      "detail": "1 frames / 1 durations"
+    },
+    {
+      "name": "running-right:duration-count",
+      "passed": true,
+      "detail": "8 frames / 8 durations"
+    },
+    {
+      "name": "running-left:duration-count",
+      "passed": true,
+      "detail": "8 frames / 8 durations"
+    },
+    {
+      "name": "roll:duration-count",
+      "passed": true,
+      "detail": "18 frames / 18 durations"
+    },
+    {
+      "name": "knead:duration-count",
+      "passed": true,
+      "detail": "12 frames / 12 durations"
+    },
+    {
+      "name": "wash-face:duration-count",
+      "passed": true,
+      "detail": "14 frames / 14 durations"
+    },
+    {
+      "name": "blink:duration-count",
+      "passed": true,
+      "detail": "3 frames / 3 durations"
+    },
+    {
+      "name": "look-aside:duration-count",
+      "passed": true,
+      "detail": "3 frames / 3 durations"
+    },
+    {
+      "name": "ear-twitch:duration-count",
+      "passed": true,
+      "detail": "3 frames / 3 durations"
+    },
+    {
+      "name": "tail-sway:duration-count",
+      "passed": true,
+      "detail": "4 frames / 4 durations"
+    },
+    {
+      "name": "knead-outro:duration-count",
+      "passed": true,
+      "detail": "4 frames / 4 durations"
+    },
+    {
+      "name": "prepare-roll:duration-count",
+      "passed": true,
+      "detail": "2 frames / 2 durations"
+    },
+    {
+      "name": "prepare-knead:duration-count",
+      "passed": true,
+      "detail": "2 frames / 2 durations"
+    },
+    {
+      "name": "sleep:duration-count",
+      "passed": true,
+      "detail": "1 frames / 1 durations"
+    },
+    {
+      "name": "wake:duration-count",
+      "passed": true,
+      "detail": "3 frames / 3 durations"
+    },
+    {
+      "name": "stretch:duration-count",
+      "passed": true,
+      "detail": "7 frames / 7 durations"
+    },
+    {
+      "name": "roll:hold-200-to-300-percent",
+      "passed": true,
+      "detail": "ratios=2.75,3.00,2.75"
+    },
+    {
+      "name": "roll:secondary-bounce",
+      "passed": true,
+      "detail": "3 overshoot/bounce keyframes"
+    },
+    {
+      "name": "knead:press-squish",
+      "passed": true,
+      "detail": "[1.04,0.96]"
+    },
+    {
+      "name": "knead:lift-stretch",
+      "passed": true,
+      "detail": "[0.98,1.02]"
+    },
+    {
+      "name": "knead:alternating-paws",
+      "passed": true,
+      "detail": "left=1,2,3,4; right=6,7,8,9"
+    },
+    {
+      "name": "renderer:no-alpha-crossfade",
+      "passed": true,
+      "detail": "engine=canvas; alphaCrossfade=false"
+    },
+    {
+      "name": "renderer:60hz-transform-interpolation",
+      "passed": true,
+      "detail": "targetFps=60"
+    },
+    {
+      "name": "fsm:independent-preparation-frames",
+      "passed": true,
+      "detail": "two-frame 120ms preparation sequences"
+    },
+    {
+      "name": "fsm:three-stage-idle",
+      "passed": true,
+      "detail": "special=30000ms; sleep=180000ms"
+    },
+    {
+      "name": "fsm:wake-before-interaction",
+      "passed": true,
+      "detail": "3 wake frames"
+    }
+  ]
+}
