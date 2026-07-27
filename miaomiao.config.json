@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "globalDurationScale": 1.0,
-  "windowScale": 1.0,
+  "windowScale": 0.75,
   "idlePauseRangeMs": [
     3000,
     6000
