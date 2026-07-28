@@ -18,3 +18,7 @@ __pycache__/
 *.pyc
 .DS_Store
 Thumbs.db
+
+# Local Swift/macOS build intermediates (the distributable app is versioned)
+runtime/macos/.build/
+runtime/macos/.build-app/

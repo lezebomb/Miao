@@ -1,0 +1,51 @@
+name: macOS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/macos.yml"
+      - "runtime/macos/**"
+      - "pet/miaomiao/actions/**"
+      - "pet/miaomiao/behavior.json"
+      - "miaomiao.config.json"
+      - "launch-miaomiao-macos.sh"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-test:
+    if: ${{ github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip macos build]') }}
+    runs-on: macos-14
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Test, build universal app, and run lifecycle smoke test
+        run: ./runtime/macos/test-app.sh
+
+      - name: Verify universal executable and bundle metadata
+        run: |
+          lipo -info runtime/macos/dist/Miaomiao.app/Contents/MacOS/Miaomiao
+          plutil -lint runtime/macos/dist/Miaomiao.app/Contents/Info.plist
+          codesign --verify --deep --strict runtime/macos/dist/Miaomiao.app
+
+      - name: Package app
+        run: ditto -c -k --sequesterRsrc --keepParent runtime/macos/dist/Miaomiao.app Miaomiao-macos-universal.zip
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Miaomiao-macos-universal
+          path: Miaomiao-macos-universal.zip
+          if-no-files-found: error
+
+      - name: Commit the directly runnable app to main
+        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+        run: |
+          git config user.name "lezebomb"
+          git config user.email "254909783+lezebomb@users.noreply.github.com"
+          git add -f runtime/macos/dist/Miaomiao.app
+          git commit -m "Build universal Miaomiao.app [skip macos build]"
+          git push origin HEAD:main
