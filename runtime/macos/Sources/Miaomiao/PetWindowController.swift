@@ -176,9 +176,11 @@ final class PetWindowController {
             withTimeInterval: configuration.hoverDwellMs / 1_000,
             repeats: false
         ) { [weak self] _ in
-            guard let self, self.hoverArmed, !self.isDragging else { return }
-            self.hoverArmed = false
-            self.animator.triggerPetAction()
+            Task { @MainActor in
+                guard let self, self.hoverArmed, !self.isDragging else { return }
+                self.hoverArmed = false
+                self.animator.triggerPetAction()
+            }
         }
     }
 

@@ -193,11 +193,18 @@ final class PetAnimationController {
         }
     }
 
-    private func scheduledTimer(milliseconds: Double, block: @escaping () -> Void) -> Timer {
+    private func scheduledTimer(
+        milliseconds: Double,
+        block: @MainActor @escaping () -> Void
+    ) -> Timer {
         let timer = Timer.scheduledTimer(
             withTimeInterval: milliseconds / 1_000,
             repeats: false
-        ) { _ in block() }
+        ) { _ in
+            Task { @MainActor in
+                block()
+            }
+        }
         RunLoop.main.add(timer, forMode: .common)
         return timer
     }

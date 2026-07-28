@@ -89,7 +89,9 @@ private final class AppDelegate: NSObject, NSApplicationDelegate {
         }
         if let delay = options.automaticExitMilliseconds {
             Timer.scheduledTimer(withTimeInterval: delay / 1_000, repeats: false) { _ in
-                NSApp.terminate(nil)
+                Task { @MainActor in
+                    NSApp.terminate(nil)
+                }
             }
         }
     }
@@ -115,29 +117,37 @@ private func resolveResources(options: CommandLineOptions) throws -> RuntimeReso
     return try RuntimeResources(root: bundledRoot)
 }
 
-do {
-    let options = try CommandLineOptions(arguments: CommandLine.arguments)
-    let resources = try resolveResources(options: options)
-    if options.checkOnly {
-        let actionCount = resources.behavior.actions.count
-        let frameCount = resources.behavior.actions.values.reduce(0) { $0 + $1.frames.count }
-        print("Miaomiao macOS validation passed.")
-        print("Behavior: \(resources.behaviorURL.path)")
-        print("Config: \(resources.configurationURL.path)")
-        print("Actions: \(actionCount); frames: \(frameCount)")
-        print(
-            "globalDurationScale=\(resources.configuration.globalDurationScale); " +
-            "windowScale=\(resources.configuration.windowScale)"
-        )
-        exit(EXIT_SUCCESS)
-    }
+@main
+private struct MiaomiaoApplication {
+    @MainActor
+    static func main() {
+        do {
+            let options = try CommandLineOptions(arguments: CommandLine.arguments)
+            let resources = try resolveResources(options: options)
+            if options.checkOnly {
+                let actionCount = resources.behavior.actions.count
+                let frameCount = resources.behavior.actions.values.reduce(0) {
+                    $0 + $1.frames.count
+                }
+                print("Miaomiao macOS validation passed.")
+                print("Behavior: \(resources.behaviorURL.path)")
+                print("Config: \(resources.configurationURL.path)")
+                print("Actions: \(actionCount); frames: \(frameCount)")
+                print(
+                    "globalDurationScale=\(resources.configuration.globalDurationScale); " +
+                    "windowScale=\(resources.configuration.windowScale)"
+                )
+                exit(EXIT_SUCCESS)
+            }
 
-    let application = NSApplication.shared
-    application.setActivationPolicy(.accessory)
-    let delegate = AppDelegate(resources: resources, options: options)
-    application.delegate = delegate
-    application.run()
-} catch {
-    fputs("Miaomiao failed to start: \(error.localizedDescription)\n", stderr)
-    exit(EXIT_FAILURE)
+            let application = NSApplication.shared
+            application.setActivationPolicy(.accessory)
+            let delegate = AppDelegate(resources: resources, options: options)
+            application.delegate = delegate
+            application.run()
+        } catch {
+            fputs("Miaomiao failed to start: \(error.localizedDescription)\n", stderr)
+            exit(EXIT_FAILURE)
+        }
+    }
 }

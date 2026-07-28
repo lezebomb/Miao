@@ -32,22 +32,26 @@ final class ChatGPTFollower {
             object: nil,
             queue: .main
         ) { [weak self] notification in
-            guard let self,
-                  let terminated = notification.userInfo?[
-                    NSWorkspace.applicationUserInfoKey
-                  ] as? NSRunningApplication,
-                  terminated.processIdentifier == self.targetApplication?.processIdentifier,
-                  self.hasAttachedToTarget else {
-                return
+            Task { @MainActor in
+                guard let self,
+                      let terminated = notification.userInfo?[
+                        NSWorkspace.applicationUserInfoKey
+                      ] as? NSRunningApplication,
+                      terminated.processIdentifier == self.targetApplication?.processIdentifier,
+                      self.hasAttachedToTarget else {
+                    return
+                }
+                NSApp.terminate(nil)
             }
-            NSApp.terminate(nil)
         }
         poll()
         timer = Timer.scheduledTimer(
             withTimeInterval: configuration.followIntervalMs / 1_000,
             repeats: true
         ) { [weak self] _ in
-            self?.poll()
+            Task { @MainActor in
+                self?.poll()
+            }
         }
         if let timer {
             RunLoop.main.add(timer, forMode: .common)
@@ -134,7 +138,7 @@ final class ChatGPTFollower {
                 at: url,
                 configuration: launchConfiguration
             ) { [weak self] application, _ in
-                DispatchQueue.main.async {
+                Task { @MainActor in
                     if let application {
                         self?.targetApplication = application
                     }
@@ -180,7 +184,7 @@ final class ChatGPTFollower {
         guard let windows else {
             return nil
         }
-        return windows.lazy.compactMap { targetWindow(from: $0) }.first
+        return windows.lazy.compactMap { self.targetWindow(from: $0) }.first
     }
 
     private func targetWindow(from element: AXUIElement) -> TargetWindow? {
