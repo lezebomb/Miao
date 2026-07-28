@@ -9,6 +9,7 @@ final class MiaomiaoCoreTests: XCTestCase {
             .deletingLastPathComponent()
             .deletingLastPathComponent()
             .deletingLastPathComponent()
+            .deletingLastPathComponent()
     }
 
     func testRepositoryJSONAndEveryFrameLoad() throws {
