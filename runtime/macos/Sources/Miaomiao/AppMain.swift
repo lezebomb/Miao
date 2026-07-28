@@ -89,7 +89,7 @@ private final class AppDelegate: NSObject, NSApplicationDelegate {
         }
         if let delay = options.automaticExitMilliseconds {
             Timer.scheduledTimer(withTimeInterval: delay / 1_000, repeats: false) { _ in
-                Task { @MainActor in
+                MainActor.assumeIsolated {
                     NSApp.terminate(nil)
                 }
             }

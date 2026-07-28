@@ -201,7 +201,7 @@ final class PetAnimationController {
             withTimeInterval: milliseconds / 1_000,
             repeats: false
         ) { _ in
-            Task { @MainActor in
+            MainActor.assumeIsolated {
                 block()
             }
         }

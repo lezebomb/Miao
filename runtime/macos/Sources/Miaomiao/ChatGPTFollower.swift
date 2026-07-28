@@ -32,7 +32,7 @@ final class ChatGPTFollower {
             object: nil,
             queue: .main
         ) { [weak self] notification in
-            Task { @MainActor in
+            MainActor.assumeIsolated {
                 guard let self,
                       let terminated = notification.userInfo?[
                         NSWorkspace.applicationUserInfoKey
@@ -49,7 +49,7 @@ final class ChatGPTFollower {
             withTimeInterval: configuration.followIntervalMs / 1_000,
             repeats: true
         ) { [weak self] _ in
-            Task { @MainActor in
+            MainActor.assumeIsolated {
                 self?.poll()
             }
         }
@@ -138,7 +138,7 @@ final class ChatGPTFollower {
                 at: url,
                 configuration: launchConfiguration
             ) { [weak self] application, _ in
-                Task { @MainActor in
+                DispatchQueue.main.async { [weak self, application] in
                     if let application {
                         self?.targetApplication = application
                     }
