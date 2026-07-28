@@ -1,0 +1,333 @@
+{
+  "formatVersion": 2,
+  "cell": {
+    "width": 192,
+    "height": 208
+  },
+  "actions": {
+    "idle": {
+      "frames": [
+        "actions/idle/frame-00.png"
+      ],
+      "frameDurationMs": 1000,
+      "frameDurationsMs": [
+        1000
+      ],
+      "repeatCount": 1,
+      "loop": false,
+      "frameProvenance": "clean-original-atlas-keyframes",
+      "interpolation": "none-independent-poses-only"
+    },
+    "running-right": {
+      "frames": [
+        "actions/running-right/frame-00.png",
+        "actions/running-right/frame-01.png",
+        "actions/running-right/frame-02.png",
+        "actions/running-right/frame-03.png",
+        "actions/running-right/frame-04.png",
+        "actions/running-right/frame-05.png",
+        "actions/running-right/frame-06.png",
+        "actions/running-right/frame-07.png"
+      ],
+      "frameDurationMs": 105,
+      "frameDurationsMs": [
+        105,
+        105,
+        105,
+        105,
+        105,
+        105,
+        105,
+        105
+      ],
+      "repeatCount": 1,
+      "loop": true,
+      "frameProvenance": "clean-original-atlas-keyframes",
+      "interpolation": "none-independent-poses-only"
+    },
+    "running-left": {
+      "frames": [
+        "actions/running-left/frame-00.png",
+        "actions/running-left/frame-01.png",
+        "actions/running-left/frame-02.png",
+        "actions/running-left/frame-03.png",
+        "actions/running-left/frame-04.png",
+        "actions/running-left/frame-05.png",
+        "actions/running-left/frame-06.png",
+        "actions/running-left/frame-07.png"
+      ],
+      "frameDurationMs": 105,
+      "frameDurationsMs": [
+        105,
+        105,
+        105,
+        105,
+        105,
+        105,
+        105,
+        105
+      ],
+      "repeatCount": 1,
+      "loop": true,
+      "frameProvenance": "clean-original-atlas-keyframes",
+      "interpolation": "none-independent-poses-only"
+    },
+    "roll": {
+      "frames": [
+        "actions/roll/frame-00.png",
+        "actions/roll/frame-01.png",
+        "actions/roll/frame-02.png",
+        "actions/roll/frame-03.png",
+        "actions/roll/frame-04.png",
+        "actions/roll/frame-05.png",
+        "actions/roll/frame-06.png",
+        "actions/roll/frame-07.png",
+        "actions/roll/frame-08.png",
+        "actions/roll/frame-09.png",
+        "actions/roll/frame-10.png",
+        "actions/roll/frame-11.png",
+        "actions/roll/frame-12.png",
+        "actions/roll/frame-13.png",
+        "actions/roll/frame-14.png",
+        "actions/roll/frame-15.png",
+        "actions/roll/frame-16.png",
+        "actions/roll/frame-17.png"
+      ],
+      "frameDurationMs": 340,
+      "frameDurationsMs": [
+        160,
+        160,
+        160,
+        160,
+        160,
+        160,
+        160,
+        200,
+        200,
+        200,
+        200,
+        160,
+        160,
+        160,
+        160,
+        160,
+        160,
+        160
+      ],
+      "repeatCount": 1,
+      "loop": false,
+      "frameProvenance": "independent-poses-with-two-frame-idle-return",
+      "interpolation": "none-independent-poses-only"
+    },
+    "knead": {
+      "frames": [
+        "actions/knead/frame-00.png",
+        "actions/knead/frame-01.png",
+        "actions/knead/frame-02.png",
+        "actions/knead/frame-03.png",
+        "actions/knead/frame-04.png",
+        "actions/knead/frame-05.png",
+        "actions/knead/frame-06.png",
+        "actions/knead/frame-07.png",
+        "actions/knead/frame-08.png",
+        "actions/knead/frame-09.png",
+        "actions/knead/frame-10.png",
+        "actions/knead/frame-11.png"
+      ],
+      "frameDurationMs": 140,
+      "frameDurationsMs": [
+        140,
+        120,
+        140,
+        170,
+        200,
+        150,
+        120,
+        140,
+        170,
+        200,
+        180,
+        150
+      ],
+      "repeatCount": 3,
+      "loop": false,
+      "frameProvenance": "independent-poses-with-closed-support-cycle",
+      "interpolation": "none-independent-poses-only",
+      "outroAction": "knead-outro"
+    },
+    "wash-face": {
+      "frames": [
+        "actions/wash-face/frame-00.png",
+        "actions/wash-face/frame-01.png",
+        "actions/wash-face/frame-02.png",
+        "actions/wash-face/frame-03.png",
+        "actions/wash-face/frame-04.png",
+        "actions/wash-face/frame-05.png",
+        "actions/wash-face/frame-06.png",
+        "actions/wash-face/frame-07.png",
+        "actions/wash-face/frame-08.png",
+        "actions/wash-face/frame-09.png",
+        "actions/wash-face/frame-10.png",
+        "actions/wash-face/frame-11.png",
+        "actions/wash-face/frame-12.png",
+        "actions/wash-face/frame-13.png"
+      ],
+      "frameDurationMs": 300,
+      "frameDurationsMs": [
+        360,
+        385,
+        430,
+        500,
+        540,
+        455,
+        360,
+        385,
+        430,
+        500,
+        540,
+        455,
+        360,
+        290
+      ],
+      "repeatCount": 1,
+      "loop": false,
+      "frameProvenance": "independent-poses-with-two-frame-idle-return",
+      "interpolation": "none-independent-poses-only"
+    },
+    "blink": {
+      "frames": [
+        "actions/idle/frame-00.png",
+        "actions/idle/frame-01.png",
+        "actions/idle/frame-02.png"
+      ],
+      "frameDurationMs": 180,
+      "frameDurationsMs": [
+        180,
+        260,
+        180
+      ],
+      "repeatCount": 1,
+      "loop": false,
+      "frameProvenance": "clean-original-atlas-keyframes",
+      "interpolation": "none-independent-poses-only"
+    },
+    "look-aside": {
+      "frames": [
+        "actions/idle/frame-00.png",
+        "actions/idle/frame-03.png",
+        "actions/idle/frame-05.png"
+      ],
+      "frameDurationMs": 300,
+      "frameDurationsMs": [
+        300,
+        850,
+        350
+      ],
+      "repeatCount": 1,
+      "loop": false,
+      "frameProvenance": "clean-original-atlas-keyframes",
+      "interpolation": "none-independent-poses-only"
+    },
+    "ear-twitch": {
+      "frames": [
+        "actions/idle/frame-00.png",
+        "actions/idle/frame-02.png",
+        "actions/idle/frame-00.png"
+      ],
+      "frameDurationMs": 220,
+      "frameDurationsMs": [
+        220,
+        280,
+        220
+      ],
+      "repeatCount": 1,
+      "loop": false,
+      "frameProvenance": "clean-original-atlas-keyframes",
+      "interpolation": "none-independent-poses-only"
+    },
+    "tail-sway": {
+      "frames": [
+        "actions/idle/frame-00.png",
+        "actions/idle/frame-05.png",
+        "actions/idle/frame-02.png",
+        "actions/idle/frame-00.png"
+      ],
+      "frameDurationMs": 300,
+      "frameDurationsMs": [
+        300,
+        450,
+        450,
+        300
+      ],
+      "repeatCount": 1,
+      "loop": false,
+      "frameProvenance": "clean-original-atlas-keyframes",
+      "interpolation": "none-independent-poses-only"
+    },
+    "knead-outro": {
+      "frames": [
+        "actions/knead-outro/frame-00.png",
+        "actions/knead-outro/frame-01.png",
+        "actions/knead-outro/frame-02.png",
+        "actions/knead-outro/frame-03.png"
+      ],
+      "frameDurationMs": 120,
+      "frameDurationsMs": [
+        120,
+        180,
+        180,
+        120
+      ],
+      "repeatCount": 1,
+      "loop": false,
+      "frameProvenance": "independent-poses-with-two-frame-idle-return",
+      "interpolation": "none-independent-poses-only"
+    }
+  },
+  "events": {
+    "petOrHover": {
+      "random": [
+        "roll",
+        "knead"
+      ],
+      "weights": [
+        0.5,
+        0.5
+      ],
+      "ignoreWhilePlaying": true
+    },
+    "dragLeft": "running-left",
+    "dragRight": "running-right",
+    "idle": {
+      "default": "idle",
+      "microActions": [
+        {
+          "action": "blink",
+          "weight": 0.4
+        },
+        {
+          "action": "look-aside",
+          "weight": 0.25
+        },
+        {
+          "action": "ear-twitch",
+          "weight": 0.2
+        },
+        {
+          "action": "tail-sway",
+          "weight": 0.15
+        }
+      ],
+      "random": [
+        {
+          "action": "wash-face",
+          "weight": 0.3
+        }
+      ],
+      "specialCheckIntervalMs": [
+        30000,
+        60000
+      ]
+    }
+  }
+}
